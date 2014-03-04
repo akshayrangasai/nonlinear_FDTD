@@ -2,23 +2,39 @@ from data import waveProperties, materialProperties
 import numpy as np
 import scipy as sp
 import matplotlib as mp
-
+import defaults as df
+from solver import Solver as sl
 
 #####################################################################
 #Rules of code: Class elements always begin with a capital letter. Defaults are always allcaps. Arguments to functions to mimic class members.
 ######################################################################
 
 class simulation:
+    
+    
+      
+    def setMesh(self):
+        
+        if self.Mesh == 0:
+            return (float)(self.WaveProperties.WaveLength/8.0)
+        elif self.Mesh == 1:
+            return (float)(self.WaveProperties.WaveLength/24.0)
+        elif self.Mesh == 2:
+            return (float)(self.WaveProperties.WaveLength/64.0)
+        else:
+            return (float)(self.WaveProperties.WaveLength/128.0)
+    
     #Time is of type float; Dimensions is a list of floats.
     
-    def __init__(self, MaterialProperties = None, WaveProperties = None, Time = None, Dimensions = None, Waveguide = None, Mesh = None):
+    
+    def __init__(self, MaterialProperties = None, WaveProperties = None, Time = None, Dimensions = None, WaveGuide = None, Mesh = None):
         
-        if material is None:
+        if MaterialProperties is None:
             self.MaterialProperties = materialProperties()
         else:
             self.MaterialProperties = MaterialProperties
         
-        if wave is None:
+        if WaveProperties is None:
             self.WaveProperties = waveProperties()
         else:
             self.WaveProperties = WaveProperties
@@ -33,12 +49,12 @@ class simulation:
         else:
             self.Dimensions = Dimensions
             
-        if self.WaveGuide is None:
+        if WaveGuide is None:
             self.WaveGuide = df.WAVEGUIDE
         else:
             self.WaveGuide = WaveGuide
         
-        if self.Mesh is None:
+        if Mesh is None:
             self.Mesh = df.MESH
         else:
             self.Mesh = Mesh
@@ -48,21 +64,14 @@ class simulation:
 ##        self.WaveProperties.WaveVelocity = self.MaterialProperties.WaveVelocity
         self.WaveProperties.WaveLength = (float) (self.MaterialProperties.WaveVelocity/self.WaveProperties.Frequency)
         
-        self.Dx = setMesh()
+        self.Dx = self.setMesh()
+        
+        #print self.Dx
         ##List of elements
         self.ElementSpan = [X/self.Dx for X in self.Dimensions]
          
-        self.Grid = sp.zeroes(tuple(self.ElementSpan), float)
+        self.Grid = sp.zeros(tuple(self.ElementSpan), float)
         
-    def setMesh(self):
-        
-        if self.Mesh == 0:
-            return (float)(self.WaveProperties.Wavelength/8.0)
-        elif self.Mesh == 1:
-            return (float)(self.WaveProperties.Wavelength/24.0)
-        elif self.Mesh == 2:
-            return (float)(self.WaveProperties.Wavelength/64.0)
-        else:
-            return (float)(self.WaveProperties.Wavelength/128.0)
-       
-        
+    
+sim = simulation()
+solution = sl(sim)

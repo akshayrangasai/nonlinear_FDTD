@@ -1,4 +1,5 @@
 import defaults as df
+from math import sqrt
 
 
 ## These classes are created to create a default set of elements. I will implement a file reader to get elelment data later. createing a new object of this type ensures that we get a nice default simulation. Let's hope this works. Solver is yet to be implemented. Sigh
@@ -14,7 +15,7 @@ class waveProperties:
 
 
 class materialProperties:
-    def __init__(self, Mu = None, K = None, Rho = None, , A = None, B = None, C = None):
+    def __init__(self, Mu = None, K = None, Rho = None,  A = None, B = None, C = None):
         
         ##Initialize All defaults if none.
         
