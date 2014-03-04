@@ -4,7 +4,7 @@ class Solver:
     Location = None
     Width = None
     
-    #Line Sources only, currently
+    #Line Sources only, currently. Multiple Sources must be accounted for, Must think of a matrix solution. So much fight for something that might not even work. Oain
     def setSource(self, Location = None, Width = None, Theta = None) :
         
         if Location is None:
