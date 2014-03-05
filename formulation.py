@@ -72,7 +72,12 @@ class simulation:
         #print self.Dx
         ##List of elements
         self.ElementSpan = [X/self.Dx for X in self.Dimensions]
-         
+        
+        #Append Dimensions
+        self.ElementSpan.append(3) 
+        #Append Times
+        self.ElementSpan.append(3)
+        
         self.Grid = sp.zeros(tuple(self.ElementSpan), float)
         
     

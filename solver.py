@@ -1,6 +1,7 @@
 import numpy as np
 import scipy as sp
-
+import defaults as df
+from matplotlib.pyplot import imshow
 class Solver:
 
     Simulation = None
@@ -12,9 +13,9 @@ class Solver:
     def setSource(self, Location = None, Width = None, Theta = None) :
         
         if Location is None:
-            self.Location = [df.LOCATION/self.Dx]
+            self.Location = [df.LOCATION/self.Simulation.Dx]
         else:
-            self.Location.append(Location/self.Dx)
+            self.Location.append(Location/self.Simulation.Dx)
 
         if Width is None:
             self.Width = [(df.WIDTH/self.Simulation.Dx)*D for D in self.Simulation.Dimensions]
@@ -31,7 +32,42 @@ class Solver:
     def Solve(self):
         #First Equation We'll be solving will be the standard wave equation.
         self.setSource()
-        #Setting the Source first. Nowm let's solve the DE like a boss
+        #Setting the Source first. Now, let's solve the DE like a boss
+        
+        _X = slice(0,self.Simulation.ElementSpan[0]-2)
+        X = slice(1,self.Simulation.ElementSpan[0]-1)
+        X_ = slice(2,self.Simulation.ElementSpan[0])
+        
+        _Y = slice(0,self.Simulation.ElementSpan[1]-2)
+        Y = slice(1,self.Simulation.ElementSpan[1]-1)
+        Y_ = slice(2,self.Simulation.ElementSpan[1])
+
+        #_X indicates previous X coordinate and X_ indicts the one after
+        r_var = round(self.Simulation.Time/self.Simulation.Dt)
+        for i in range(1,int(r_var)):
+            #Solving for Displacements in the X direction
+            self.Simulation.Grid[X,Y,0,2] = 2*self.Simulation.Grid[X,Y,0,1] - self.Simulation.Grid[X,Y,0,0] + (pow(self.Simulation.Dt,2)/self.Simulation.MaterialProperties.Rho)*(
+            
+            (self.Simulation.MaterialProperties.Mu/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X_,Y,0,1] -2*self.Simulation.Grid[X,Y,0,1] + self.Simulation.Grid[_X,Y,0,1]) + ((self.Simulation.MaterialProperties.Mu/3 + self.Simulation.MaterialProperties.K)/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X_,Y,0,1] -2*self.Simulation.Grid[X,Y,0,1] + self.Simulation.Grid[_X,Y,0,1])
+            )
+            
+            #Solving for Y
+            
+            self.Simulation.Grid[X,Y,1,2] = 2*self.Simulation.Grid[X,Y,1,1] - self.Simulation.Grid[X,Y,1,0] + (pow(self.Simulation.Dt,2)/self.Simulation.MaterialProperties.Rho)*(
+            
+            (self.Simulation.MaterialProperties.Mu/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X,_Y,1,1] -2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[X,_Y,1,1]) + ((self.Simulation.MaterialProperties.Mu/3 + self.Simulation.MaterialProperties.K)/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X,Y_,1,1] -2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[X,_Y,1,1])
+            )
+            
+            #Updates go Here
+            self.Simulation.Grid[:,:,1,0] = self.Simulation.Grid[:,:,1,1]
+            self.Simulation.Grid[:,:,1,1] =  self.Simulation.Grid[:,:,1,2]
+            
+            self.Simulation.Grid[:,:,0,0] = self.Simulation.Grid[:,:,0,1]
+            self.Simulation.Grid[:,:,0,1] =  self.Simulation.Grid[:,:,0,2]
+            #Updated
+            if i%3 == 0:
+                imshow(np.reshape(self.Simulation.Grid[:,:,0,1], (self.Simulation.Dimensions[0],self.Simulation.Dimensions[0])))
+                #p.plot.show()
         
     def __init__(self, Simulation = None):
         if Simulation is None:
