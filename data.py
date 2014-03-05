@@ -49,7 +49,10 @@ class materialProperties:
         else:
             self.C = C
             
-        self.WaveVelocity = sqrt(self.K/self.Rho)
+        self.WaveVelocityL = sqrt((self.K + (4*self.Mu/3))/self.Rho)
+        self.WaveVelocityT = sqrt(self.Mu/self.Rho)
+        self.BetaL = 3*pow(self.WaveVelocityL,2) + (1.0/self.Rho)*(2*self.A + 6*self.B + 2*self.C)
+        self.BetaT = pow(self.WaveVelocityT,2) + (1.0/self.Rho)*(self.A/2 + self.B)
             
 class waveGuide:
 

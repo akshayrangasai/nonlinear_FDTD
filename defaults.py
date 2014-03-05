@@ -12,3 +12,4 @@ TIME = 1.5 #seconds
 WAVEGUIDE = 1
 LOCATION = 0
 THETA = 0
+WIDTH = 0.5

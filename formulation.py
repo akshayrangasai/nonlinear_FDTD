@@ -11,7 +11,9 @@ from solver import Solver as sl
 
 class simulation:
     
-    
+    def setStep(self, Dx):
+        #Courant Condition check
+        return (Dx/self.MaterialProperties.WaveVelocityL)/2
       
     def setMesh(self):
         
@@ -62,9 +64,10 @@ class simulation:
         #1D, 2D or 3D 
         self.DimensionCount = len(self.Dimensions)
 ##        self.WaveProperties.WaveVelocity = self.MaterialProperties.WaveVelocity
-        self.WaveProperties.WaveLength = (float) (self.MaterialProperties.WaveVelocity/self.WaveProperties.Frequency)
+        self.WaveProperties.WaveLength = (float) (self.MaterialProperties.WaveVelocityL/self.WaveProperties.Frequency)
         
         self.Dx = self.setMesh()
+        self.Dt = self.setStep(self.Dx)
         
         #print self.Dx
         ##List of elements
