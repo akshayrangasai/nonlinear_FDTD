@@ -71,7 +71,7 @@ class simulation:
         
         #print self.Dx
         ##List of elements
-        self.ElementSpan = [X/self.Dx for X in self.Dimensions]
+        self.ElementSpan = [round(X/self.Dx) for X in self.Dimensions]
         
         #Append Dimensions
         self.ElementSpan.append(3) 

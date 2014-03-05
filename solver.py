@@ -1,7 +1,7 @@
 import numpy as np
 import scipy as sp
 import defaults as df
-from matplotlib.pyplot import imshow
+from matplotlib.pyplot import imshow, plot, show
 class Solver:
 
     Simulation = None
@@ -58,6 +58,12 @@ class Solver:
             (self.Simulation.MaterialProperties.Mu/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X,_Y,1,1] -2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[X,_Y,1,1]) + ((self.Simulation.MaterialProperties.Mu/3 + self.Simulation.MaterialProperties.K)/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X,Y_,1,1] -2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[X,_Y,1,1])
             )
             
+            #Space for adding source. Must figure out modular solution. add as setSource function?
+            
+            
+            
+            #Space for adding boundary conditions. Create a setBoundary Condition. Should be peaceful
+            
             #Updates go Here
             self.Simulation.Grid[:,:,1,0] = self.Simulation.Grid[:,:,1,1]
             self.Simulation.Grid[:,:,1,1] =  self.Simulation.Grid[:,:,1,2]
@@ -66,7 +72,9 @@ class Solver:
             self.Simulation.Grid[:,:,0,1] =  self.Simulation.Grid[:,:,0,2]
             #Updated
             if i%3 == 0:
-                imshow(np.reshape(self.Simulation.Grid[:,:,0,1], (self.Simulation.Dimensions[0],self.Simulation.Dimensions[0])))
+                data = np.reshape(self.Simulation.Grid[:,:,0,1],  (self.Simulation.ElementSpan[0],self.Simulation.ElementSpan[1]))                
+                imshow(data)
+                show()
                 #p.plot.show()
         
     def __init__(self, Simulation = None):
