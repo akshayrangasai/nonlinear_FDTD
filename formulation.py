@@ -29,7 +29,7 @@ class simulation:
     #Time is of type float; Dimensions is a list of floats.
     
     
-    def __init__(self, MaterialProperties = None, WaveProperties = None, Time = None, Dimensions = None, WaveGuide = None, Mesh = None):
+    def __init__(self, MaterialProperties = None, WaveProperties = None, Reflections = None, Dimensions = None, WaveGuide = None, Mesh = None, Pulses = None):
         
         if MaterialProperties is None:
             self.MaterialProperties = materialProperties()
@@ -41,10 +41,10 @@ class simulation:
         else:
             self.WaveProperties = WaveProperties
         
-        if Time is None:
-            self.Time = df.TIME
+        if Reflections is None:
+            self.Reflections = df.REFLECTIONS
         else:
-            self.Time = Time
+            self.Reflections = Reflections
         
         if Dimensions is None:
             self.Dimensions = df.DIMENSIONS
@@ -60,6 +60,13 @@ class simulation:
             self.Mesh = df.MESH
         else:
             self.Mesh = Mesh
+            
+        if Pulses is None:
+            self.Pulses = df.PULSES
+        else:
+            self.Pulses = Pulses
+        
+        self.Time = 2*self.Reflections*self.Dimensions[0]/self.MaterialProperties.WaveVelocityL
     
         #1D, 2D or 3D 
         self.DimensionCount = len(self.Dimensions)
