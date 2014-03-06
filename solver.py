@@ -83,7 +83,7 @@ class Solver:
             #Updated
 #            print i
             if i%10 == 0:
-                data = np.reshape(self.Simulation.Grid[:,:,1,1],  (self.Simulation.ElementSpan[0],self.Simulation.ElementSpan[1]))                
+                data = np.reshape(self.Simulation.Grid[:,:,0,1],  (self.Simulation.ElementSpan[0],self.Simulation.ElementSpan[1]))                
                 imshow(data)
                 clim([-1,1])
                 draw()
