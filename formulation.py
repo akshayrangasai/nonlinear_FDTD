@@ -86,7 +86,7 @@ class simulation:
         self.ElementSpan.append(3)
         
         self.Grid = sp.zeros(tuple(self.ElementSpan), float)
-        
+        self.SourceSignal = sp.zeros((round(self.Time/self.Dt),1))
     
 sim = simulation()
 solution = sl(sim)
