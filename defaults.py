@@ -1,12 +1,12 @@
 FREQUENCY = 1e5
-A = -3.1*(10^-11)
+A = -3.1*(10^11)
 B = 0
 C = 0
 BOUNDARY = 0 #Purely Reflecting
-DIMENSIONS = [.15 , 0.075] #metres
+DIMENSIONS = [.30 , 0.15] #metres
 MESH = 0 #0, 1, 2, 3 Coarse, Medium ,fine and extrafine mesh l/8, l/24, l/64, l/128
-MU = 0
-K = 12e9
+MU = 26e9
+K = 76e9
 RHO = 2700
 TIME = 1.5 #seconds
 WAVEGUIDE = 1
