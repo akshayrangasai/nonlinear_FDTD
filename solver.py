@@ -9,11 +9,18 @@ class Solver:
     Simulation = None
     Location = None
     Width = None
+    #Create a Movie Variable to calculate number of movies and plots, to bring them up when necessary. add arguments to put it in grid, instead of what's happening here. This is hardcoded waste.
     def putMovie(self, pauseTime):
-        data = np.reshape(self.Simulation.NLGrid[:,:,0,1],  (self.Simulation.ElementSpan[0],self.Simulation.ElementSpan[1]))       #       # 
+        data = np.reshape(self.Simulation.Grid[:,:,0,1],  (self.Simulation.ElementSpan[0],self.Simulation.ElementSpan[1]))       #       # 
         figure(0)
         imshow(data)
-        clim([-1e16,1e16])
+        clim([-1e-8,1e-8])
+        draw()
+        pause(pauseTime)
+        figure(1)
+        data = np.reshape(self.Simulation.NLGrid[:,:,0,1],  (self.Simulation.ElementSpan[0],self.Simulation.ElementSpan[1]))       #       # 
+        imshow(data)
+        clim([-1e-13,1e-13])
         draw()
         pause(pauseTime)
         
@@ -23,8 +30,8 @@ class Solver:
         #Adding default Source
         X_S = round(self.Location[0])  + 5 
         Y_S = slice(round(self.Simulation.ElementSpan[1]/2) - round(self.Width[0]/2), round(self.Simulation.ElementSpan[1]/2) + round(self.Width[0]/2))
-        self.Simulation.Grid[X_S,Y_S,0,2] = (1- cos(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt))*cos(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)
-        self.Simulation.Grid[-1,Y_S,0,2] = sin(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)
+        #self.Simulation.Grid[-1,Y_S,0,2] = (1- cos(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt))*cos(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*10e-8
+        self.Simulation.Grid[X_S,Y_S,1,2] = sin(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*10e-8
         #print self.Simulation.Grid[X_S, round(self.Simulation.ElementSpan[1]/2) - round(self.Width[0]/2) + 1,0,2]
             
     #Line Sources only, currently. Multiple Sources must be accounted for, Must think of a matrix solution. So much fight for something that might not even work. Pain.
@@ -97,7 +104,7 @@ class Solver:
             self.Simulation.NLGrid[X,Y,1,2] = 2*self.Simulation.NLGrid[X,Y,1,1] - self.Simulation.NLGrid[X,Y,1,0] + pow(self.Simulation.Dt,2)*(pow(self.Simulation.MaterialProperties.WaveVelocityT,2)*((self.Simulation.NLGrid[X_,Y,1,1] - 2*self.Simulation.NLGrid[X,Y,1,1] + self.Simulation.NLGrid[_X,Y,1,1])/pow(self.Simulation.Dx,2)) + pow(self.Simulation.MaterialProperties.BetaT,1)*(((self.Simulation.Grid[X_,Y,1,1] - 2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[_X,Y,1,1])*(self.Simulation.Grid[X_,Y,0,1] - self.Simulation.Grid[_X,Y,0,1])/(2*pow(self.Simulation.Dx,3))) + (self.Simulation.Grid[X_,Y,0,1] -2*self.Simulation.Grid[X,Y,0,1] + self.Simulation.Grid[_X,Y,0,1])*(self.Simulation.Grid[X_,Y,1,1] - self.Simulation.Grid[_X,Y,1,1])/(2*pow(self.Simulation.Dx,3))))
             
             
-            self.Simulation.SourceSignal[i,0] = self.Simulation.Grid[5,15,0,2] + self.Simulation.NLGrid[5,15,0,2]
+            self.Simulation.SourceSignal[i,0] = self.Simulation.NLGrid[5,15,0,2] #+ self.Simulation.NLGrid[5,15,0,2]
             
             #print self.Simulation.Grid[15,15,0,2]
            
@@ -116,12 +123,12 @@ class Solver:
             #Updated
 #            print i
             if i%10 == 0:
-                #self.putMovie(0.01)    
+                self.putMovie(0.01)    
                 pass
                 #p.plot.show()
         print self.Simulation.MaterialProperties.BetaL, self.Simulation.MaterialProperties.BetaT, self.Simulation.MaterialProperties.WaveVelocityL, self.Simulation.Dt
         
-        figure(0)
+        figure(2)
         plot(self.Simulation.SourceSignal)
         show()
                 
