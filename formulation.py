@@ -3,6 +3,7 @@ import numpy as np
 import scipy as sp
 import matplotlib as mp
 import defaults as df
+import sys
 from solver import Solver as sl
 
 #####################################################################
@@ -11,6 +12,9 @@ from solver import Solver as sl
 
 class simulation:
     
+    def setMixing(self, val):
+        self.Mixing = val
+
     def setStep(self, Dx):
         #Courant Condition check
         return (Dx/self.MaterialProperties.WaveVelocityL)/2
@@ -20,7 +24,7 @@ class simulation:
         if self.Mesh == 0:
             return (float)(self.WaveProperties.WaveLength/8.0)
         elif self.Mesh == 1:
-            return (float)(self.WaveProperties.WaveLength/24.0)
+            return (float)(self.WaveProperties.WaveLength/12.0)
         elif self.Mesh == 2:
             return (float)(self.WaveProperties.WaveLength/64.0)
         else:
@@ -72,7 +76,7 @@ class simulation:
         self.DimensionCount = len(self.Dimensions)
 ##        self.WaveProperties.WaveVelocity = self.MaterialProperties.WaveVelocity
         self.WaveProperties.WaveLength = (float) (self.MaterialProperties.WaveVelocityL/self.WaveProperties.Frequency)
-        
+        self.Mixing = False 
         self.Dx = self.setMesh()
         self.Dt = self.setStep(self.Dx)
         
@@ -88,6 +92,30 @@ class simulation:
         self.Grid = sp.zeros(tuple(self.ElementSpan), float)
         self.NLGrid = sp.zeros(tuple(self.ElementSpan), float)
     	self.SourceSignal = sp.zeros((round(self.Time/self.Dt),1))
+    	self.SData = sp.zeros((round(self.Time/self.Dt),1))
+        self.ViewMovie = False	
     
-sim = simulation()
-solution = sl(sim)
+def __init__():
+    args = sys.argv    
+    args = [arg.replace('--','') for arg in args]
+    names = []
+    try:
+        ind = args.index('savenames')
+        names.append(args[ind+1])
+        names.append(args[ind+2])
+    except:
+        print "Using Default File names to save data"
+        names.append("TotalSignal")
+        names.append("NLinSignal")
+    sim = simulation()
+    if 'mixing' in args:
+        sim.setMixing(True)
+    if 'movie' in args:
+        sim.ViewMovie = True
+    solution = sl(sim)
+    np.save(names[0],sim.SourceSignal) 
+    np.save(names[1],sim.SData)
+
+
+
+__init__()

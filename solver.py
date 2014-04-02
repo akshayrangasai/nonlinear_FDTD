@@ -3,6 +3,7 @@ import scipy as sp
 import defaults as df
 from math import sin, pi, cos
 from matplotlib.pyplot import imshow, plot, show, draw, pause, clim, figure
+import sys
 #from matplotlib import figure
 class Solver:
 
@@ -18,9 +19,9 @@ class Solver:
         draw()
         pause(pauseTime)
         figure(1)
-        data = np.reshape(self.Simulation.NLGrid[:,:,0,1],  (self.Simulation.ElementSpan[0],self.Simulation.ElementSpan[1]))       #       # 
+        data = np.reshape(self.Simulation.NLGrid[:,:,1,1],  (self.Simulation.ElementSpan[0],self.Simulation.ElementSpan[1]))       #       # 
         imshow(data)
-        clim([-1e-13,1e-13])
+        #clim([-1e-8,1e-8])
         draw()
         pause(pauseTime)
         
@@ -28,10 +29,15 @@ class Solver:
     def putSource(self, i):
         
         #Adding default Source
-        X_S = round(self.Location[0])  + 5 
+        X_S = round(self.Location[0]) 
         Y_S = slice(round(self.Simulation.ElementSpan[1]/2) - round(self.Width[0]/2), round(self.Simulation.ElementSpan[1]/2) + round(self.Width[0]/2))
-        #self.Simulation.Grid[-1,Y_S,0,2] = (1- cos(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt))*cos(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*10e-8
-        self.Simulation.Grid[X_S,Y_S,1,2] = sin(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*10e-8
+        
+        if self.Simulation.Mixing == True:
+        
+            self.Simulation.Grid[self.Simulation.ElementSpan[0]-1,Y_S,0,2] = (1- cos(4*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt))*10e-8#*cos(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*10e-8
+        
+        
+        self.Simulation.Grid[X_S,Y_S,0,2] = sin(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*10e-8
         #print self.Simulation.Grid[X_S, round(self.Simulation.ElementSpan[1]/2) - round(self.Width[0]/2) + 1,0,2]
             
     #Line Sources only, currently. Multiple Sources must be accounted for, Must think of a matrix solution. So much fight for something that might not even work. Pain.
@@ -70,6 +76,7 @@ class Solver:
         #_X indicates previous X coordinate and X_ indicts the one after
         r_var = round(self.Simulation.Time/self.Simulation.Dt)
         print "Total Iterations are " , r_var
+       # sdata = sp.zeros((r_var,1))
         for i in range(1,int(r_var)):
             #Solving for Displacements in the X direction
             self.Simulation.Grid[X,Y,0,2] = 2*self.Simulation.Grid[X,Y,0,1] - self.Simulation.Grid[X,Y,0,0] + (pow(self.Simulation.Dt,2)/self.Simulation.MaterialProperties.Rho)*(
@@ -104,8 +111,11 @@ class Solver:
             self.Simulation.NLGrid[X,Y,1,2] = 2*self.Simulation.NLGrid[X,Y,1,1] - self.Simulation.NLGrid[X,Y,1,0] + pow(self.Simulation.Dt,2)*(pow(self.Simulation.MaterialProperties.WaveVelocityT,2)*((self.Simulation.NLGrid[X_,Y,1,1] - 2*self.Simulation.NLGrid[X,Y,1,1] + self.Simulation.NLGrid[_X,Y,1,1])/pow(self.Simulation.Dx,2)) + pow(self.Simulation.MaterialProperties.BetaT,1)*(((self.Simulation.Grid[X_,Y,1,1] - 2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[_X,Y,1,1])*(self.Simulation.Grid[X_,Y,0,1] - self.Simulation.Grid[_X,Y,0,1])/(2*pow(self.Simulation.Dx,3))) + (self.Simulation.Grid[X_,Y,0,1] -2*self.Simulation.Grid[X,Y,0,1] + self.Simulation.Grid[_X,Y,0,1])*(self.Simulation.Grid[X_,Y,1,1] - self.Simulation.Grid[_X,Y,1,1])/(2*pow(self.Simulation.Dx,3))))
             
             
-            self.Simulation.SourceSignal[i,0] = self.Simulation.NLGrid[5,15,0,2] #+ self.Simulation.NLGrid[5,15,0,2]
+            self.Simulation.SourceSignal[i,0] = self.Simulation.NLGrid[round(self.Simulation.Grid.shape[0]/2),round(self.Simulation.Grid.shape[1]/2),0,2] + self.Simulation.Grid[round(self.Simulation.Grid.shape[0]/2),round(self.Simulation.Grid.shape[1]/2),0,2]
             
+            
+            
+            self.Simulation.SData[i,0] =  self.Simulation.NLGrid[round(self.Simulation.Grid.shape[0]/2),round(self.Simulation.Grid.shape[1]/2),0,2]  
             #print self.Simulation.Grid[15,15,0,2]
            
              #Updates go Here
@@ -122,16 +132,24 @@ class Solver:
             self.Simulation.NLGrid[:,:,0,1] =  self.Simulation.NLGrid[:,:,0,2]
             #Updated
 #            print i
-            if i%10 == 0:
-                self.putMovie(0.01)    
-                pass
+            if i%22 == 0:
+                if self.Simulation.ViewMovie == True:
+                    self.putMovie(0.01)    
+                    sys.stdout.write('==')
+                
                 #p.plot.show()
-        print self.Simulation.MaterialProperties.BetaL, self.Simulation.MaterialProperties.BetaT, self.Simulation.MaterialProperties.WaveVelocityL, self.Simulation.Dt
+        #print self.Simulation.MaterialProperties.BetaL, self.Simulation.MaterialProperties.BetaT, self.Simulation.MaterialProperties.WaveVelocityL, self.Simulation.Dt
         
         figure(2)
         plot(self.Simulation.SourceSignal)
         show()
-                
+        pause(0.01) 
+        figure(3)
+        plot(self.Simulation.SData)
+        show()
+        
+#        np.save("TotalSignal",self.Simulation.SourceSignal) 
+#        np.save("LinSignal",sdata)
     def __init__(self, Simulation = None):
         if Simulation is None:
             raise ValueError("Simulation Cannot be None. Please Initialize a New Simulation to proceed")
