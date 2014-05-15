@@ -19,7 +19,7 @@ class Solver:
         draw()
         pause(pauseTime)
         figure(1)
-        data = np.reshape(self.Simulation.NLGrid[:,:,1,1],  (self.Simulation.ElementSpan[0],self.Simulation.ElementSpan[1]))       #       # 
+        data = np.reshape(self.Simulation.NLGrid[:,:,0,1],  (self.Simulation.ElementSpan[0],self.Simulation.ElementSpan[1]))       #       # 
         imshow(data)
         #clim([-1e-8,1e-8])
         draw()
@@ -34,7 +34,7 @@ class Solver:
         
         if self.Simulation.Mixing == True:
         
-            self.Simulation.Grid[self.Simulation.ElementSpan[0]-1,Y_S,0,2] = (1- cos(4*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt))*10e-8#*cos(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*10e-8
+            self.Simulation.Grid[self.Simulation.ElementSpan[0]-1,Y_S,0,2] = sin(4*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*10e-4#*cos(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*10e-8
         
         
         self.Simulation.Grid[X_S,Y_S,0,2] = sin(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*10e-8
@@ -86,13 +86,15 @@ class Solver:
             (self.Simulation.MaterialProperties.Mu/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X,Y_,0,1] -2*self.Simulation.Grid[X,Y,0,1] + self.Simulation.Grid[X,_Y,0,1]) + ((self.Simulation.MaterialProperties.Mu/3 + self.Simulation.MaterialProperties.K)/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X_,Y_,1,1] -self.Simulation.Grid[X_,_Y,1,1] + self.Simulation.Grid[_X,_Y,1,1] - self.Simulation.Grid[_X,Y_,1,1])/4
            ) 
             #Solving for Y
+
+            self.Simulation.Grid[X,Y,1,2] = 2*self.Simulation.Grid[X,Y,1,1] - self.Simulation.Grid[X,Y,1,0] + (pow(self.Simulation.Dt,2)/self.Simulation.MaterialProperties.Rho)*(
+           
+            (self.Simulation.MaterialProperties.Mu/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X,Y_,1,1] -2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[X,_Y,1,1]) + ((self.Simulation.MaterialProperties.Mu/3 + self.Simulation.MaterialProperties.K)/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X,Y_,1,1] -2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[X,_Y,1,1])
+           + 
+            (self.Simulation.MaterialProperties.Mu/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X_,Y,1,1] -2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[_X,Y,1,1]) + ((self.Simulation.MaterialProperties.Mu/3 + self.Simulation.MaterialProperties.K)/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X_,Y_,0,1] -self.Simulation.Grid[X_,_Y,0,1] + self.Simulation.Grid[_X,_Y,0,1] - self.Simulation.Grid[_X,Y_,0,1])/4
+           ) 
             
-            #self.Simulation.Grid[X,Y,1,2] = 2*self.Simulation.Grid[X,Y,1,1] - self.Simulation.Grid[X,Y,1,0] + (pow(self.Simulation.Dt,2)/self.Simulation.MaterialProperties.Rho)*(
-            
-            #(self.Simulation.MaterialProperties.Mu/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X,_Y,1,1] -2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[X,_Y,1,1]) + ((self.Simulation.MaterialProperties.Mu/3 + self.Simulation.MaterialProperties.K)/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X,Y_,1,1] -2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[X,_Y,1,1])
-            #+ 
-            #(self.Simulation.MaterialProperties.Mu/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X_,Y,1,1] -2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[_X,Y,1,1]) + ((self.Simulation.MaterialProperties.Mu/3 + self.Simulation.MaterialProperties.K)/pow(self.Simulation.Dx,2))*(self.Simulation.Grid[X_,Y_,0,1] -self.Simulation.Grid[X_,_Y,0,1] + self.Simulation.Grid[_X,_Y,0,1] - self.Simulation.Grid[_X,Y_,0,1])/4
-           #) 
+         
             #Space for adding source. Must figure out modular solution. add as setSource function?
             if(i <= round((1.0/(self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
                 self.putSource(i)
@@ -103,19 +105,19 @@ class Solver:
             #self.putBoundary()
             #Starting Non-linear stuff.
             
-            self.Simulation.NLGrid[X,Y,0,2] = 2*self.Simulation.NLGrid[X,Y,0,1] - self.Simulation.NLGrid[X,Y,0,0] + pow(self.Simulation.Dt,2)*(pow(self.Simulation.MaterialProperties.WaveVelocityL ,2)*((self.Simulation.NLGrid[X_,Y,0,1] - 2*self.Simulation.NLGrid[X,Y,0,1] + self.Simulation.NLGrid[_X,Y,0,1])/pow(self.Simulation.Dx,2)) + pow(self.Simulation.MaterialProperties.BetaL,1)*((self.Simulation.Grid[X_,Y,0,1] - 2*self.Simulation.Grid[X,Y,0,1] + self.Simulation.Grid[_X,Y,0,1])*(self.Simulation.Grid[X_,Y,0,1] - self.Simulation.Grid[_X,Y,0,1])/(2*pow(self.Simulation.Dx,3))) + pow(self.Simulation.MaterialProperties.BetaT,1)*((self.Simulation.Grid[X_,Y,1,1] - 2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[_X,Y,1,1])*(self.Simulation.Grid[X_,Y,1,1] - self.Simulation.Grid[_X,Y,1,1])/(2*pow(self.Simulation.Dx,3))))
+           # self.Simulation.NLGrid[X,Y,0,2] = 2*self.Simulation.NLGrid[X,Y,0,1] - self.Simulation.NLGrid[X,Y,0,0] + pow(self.Simulation.Dt,2)*(pow(self.Simulation.MaterialProperties.WaveVelocityL ,2)*((self.Simulation.NLGrid[X_,Y,0,1] - 2*self.Simulation.NLGrid[X,Y,0,1] + self.Simulation.NLGrid[_X,Y,0,1])/pow(self.Simulation.Dx,2)) + pow(self.Simulation.MaterialProperties.BetaL,1)*((self.Simulation.Grid[X_,Y,0,1] - 2*self.Simulation.Grid[X,Y,0,1] + self.Simulation.Grid[_X,Y,0,1])*(self.Simulation.Grid[X_,Y,0,1] - self.Simulation.Grid[_X,Y,0,1])/(2*pow(self.Simulation.Dx,3))) + pow(self.Simulation.MaterialProperties.BetaT,1)*((self.Simulation.Grid[X_,Y,1,1] - 2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[_X,Y,1,1])*(self.Simulation.Grid[X_,Y,1,1] - self.Simulation.Grid[_X,Y,1,1])/(2*pow(self.Simulation.Dx,3))))
             
            
            #Nonlinearity in Y
             
-            self.Simulation.NLGrid[X,Y,1,2] = 2*self.Simulation.NLGrid[X,Y,1,1] - self.Simulation.NLGrid[X,Y,1,0] + pow(self.Simulation.Dt,2)*(pow(self.Simulation.MaterialProperties.WaveVelocityT,2)*((self.Simulation.NLGrid[X_,Y,1,1] - 2*self.Simulation.NLGrid[X,Y,1,1] + self.Simulation.NLGrid[_X,Y,1,1])/pow(self.Simulation.Dx,2)) + pow(self.Simulation.MaterialProperties.BetaT,1)*(((self.Simulation.Grid[X_,Y,1,1] - 2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[_X,Y,1,1])*(self.Simulation.Grid[X_,Y,0,1] - self.Simulation.Grid[_X,Y,0,1])/(2*pow(self.Simulation.Dx,3))) + (self.Simulation.Grid[X_,Y,0,1] -2*self.Simulation.Grid[X,Y,0,1] + self.Simulation.Grid[_X,Y,0,1])*(self.Simulation.Grid[X_,Y,1,1] - self.Simulation.Grid[_X,Y,1,1])/(2*pow(self.Simulation.Dx,3))))
+            #self.Simulation.NLGrid[X,Y,1,2] = 2*self.Simulation.NLGrid[X,Y,1,1] - self.Simulation.NLGrid[X,Y,1,0] + pow(self.Simulation.Dt,2)*(pow(self.Simulation.MaterialProperties.WaveVelocityT,2)*((self.Simulation.NLGrid[X_,Y,1,1] - 2*self.Simulation.NLGrid[X,Y,1,1] + self.Simulation.NLGrid[_X,Y,1,1])/pow(self.Simulation.Dx,2)) + pow(self.Simulation.MaterialProperties.BetaT,1)*(((self.Simulation.Grid[X_,Y,1,1] - 2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[_X,Y,1,1])*(self.Simulation.Grid[X_,Y,0,1] - self.Simulation.Grid[_X,Y,0,1])/(2*pow(self.Simulation.Dx,3))) + (self.Simulation.Grid[X_,Y,0,1] -2*self.Simulation.Grid[X,Y,0,1] + self.Simulation.Grid[_X,Y,0,1])*(self.Simulation.Grid[X_,Y,1,1] - self.Simulation.Grid[_X,Y,1,1])/(2*pow(self.Simulation.Dx,3))))
             
             
-            self.Simulation.SourceSignal[i,0] = self.Simulation.NLGrid[round(self.Simulation.Grid.shape[0]/2),round(self.Simulation.Grid.shape[1]/2),0,2] + self.Simulation.Grid[round(self.Simulation.Grid.shape[0]/2),round(self.Simulation.Grid.shape[1]/2),0,2]
+            self.Simulation.SourceSignal[i,0] = self.Simulation.Grid[round(self.Simulation.Grid.shape[0]/2),round(self.Simulation.Grid.shape[1]/2),0,2]# + self.Simulation.NLGrid[1,round(self.Simulation.Grid.shape[1]/2),0,2]
+             
             
             
-            
-            self.Simulation.SData[i,0] =  self.Simulation.NLGrid[round(self.Simulation.Grid.shape[0]/2),round(self.Simulation.Grid.shape[1]/2),0,2]  
+            self.Simulation.SData[i,0] =  self.Simulation.NLGrid[1,round(self.Simulation.Grid.shape[1]/2),0,2]  
             #print self.Simulation.Grid[15,15,0,2]
            
              #Updates go Here
@@ -142,7 +144,7 @@ class Solver:
         
         figure(2)
         plot(self.Simulation.SourceSignal)
-        show()
+
         pause(0.01) 
         figure(3)
         plot(self.Simulation.SData)

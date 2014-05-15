@@ -5,6 +5,7 @@ import matplotlib as mp
 import defaults as df
 import sys
 from solver import Solver as sl
+import scipy.io as sio
 
 #####################################################################
 #Rules of code: Class elements always begin with a capital letter. Defaults are always allcaps. Arguments to functions to mimic class members.
@@ -99,22 +100,25 @@ def __init__():
     args = sys.argv    
     args = [arg.replace('--','') for arg in args]
     names = []
-    try:
-        ind = args.index('savenames')
-        names.append(args[ind+1])
-        names.append(args[ind+2])
-    except:
-        print "Using Default File names to save data"
-        names.append("TotalSignal")
-        names.append("NLinSignal")
     sim = simulation()
     if 'mixing' in args:
         sim.setMixing(True)
     if 'movie' in args:
         sim.ViewMovie = True
     solution = sl(sim)
-    np.save(names[0],sim.SourceSignal) 
-    np.save(names[1],sim.SData)
+    if 'plot' in args:
+        pass
+    if 'save' in args:
+        try:
+            ind = args.index('savenames')
+            names.append(args[ind+1])
+            names.append(args[ind+2])
+        except:
+            print "Using Default File names to save data"
+            names.append("TotalSignal")
+            names.append("NLinSignal")
+        sio.savemat(names[0],{names[0]:sim.SourceSignal}) 
+        sio.savemat(names[1],{names[1]:sim.SData})
 
 
 
