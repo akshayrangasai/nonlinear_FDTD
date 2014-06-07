@@ -13,25 +13,13 @@ class Solver:
     #Create a Movie Variable to calculate number of movies and plots, to bring them up when necessary. add arguments to put it in grid, instead of what's happening here. This is hardcoded waste.
     def putMovie(self, pauseTime):
         data = np.reshape(self.Simulation.Grid[:,:,1,1],  (self.Simulation.ElementSpan[0],self.Simulation.ElementSpan[1]))       #       # 
-        figure(0)
+        figure("Wave Movie")
         imshow(data)
         clim([-1e-8,1e-8])
         draw()
         pause(pauseTime)
    
-        figure(1)
-        data = np.reshape(self.Simulation.NLGrid[:,:,0,1],  (self.Simulation.ElementSpan[0],self.Simulation.ElementSpan[1]))       #       # 
-        imshow(data)
-        clim([-1e-13,1e-13])
-        draw()
-        pause(pauseTime)
-    
-        figure(2)
-        data = np.reshape(self.Simulation.NLGrid[:,:,1,1],  (self.Simulation.ElementSpan[0],self.Simulation.ElementSpan[1]))       #       # 
-        imshow(data)
-        clim([-1e-14,1e-14])
-        draw()
-        pause(pauseTime) 
+       
             
     def putSource(self, i):
         #Multiply with gaussian to remove edge effects.
@@ -43,7 +31,7 @@ class Solver:
         
             self.Simulation.Grid[-1,Y_S,0,2] = sin(4*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*1e-8
         
-        self.Simulation.Grid[X_S,Y_S,0,2] = (sin(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt))*1e-8#)*cos(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*1e-8
+        self.Simulation.Grid[Y_S,X_S,1,2] = (sin(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt))*1e-8#)*cos(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*1e-8
         #print self.Simulation.Grid[X_S, round(self.Simulation.ElementSpan[1]/2) - round(self.Width[0]/2) + 1,0,2]
             
     #Line Sources only, currently. Multiple Sources must be accounted for, Must think of a matrix solution. So much fight for something that might not even work. Pain.
@@ -82,12 +70,21 @@ class Solver:
         #_X indicates previous X coordinate and X_ indicts the one after
         r_var = round(self.Simulation.Time/self.Simulation.Dt)
         print "Total Iterations are " , r_var
+        c_t2 = pow(self.Simulation.MaterialProperties.WaveVelocityT,2)
+        c_l2 = pow(self.Simulation.MaterialProperties.WaveVelocityL,2)
+
        # sdata = sp.zeros((r_var,1))
         for i in range(1,int(r_var)):
-            #Solving for Displacements in the X direction
-            dv_y = (self.Simulation.Grid[X,Y_,1,2] - self.Simulation.Grid[X,Y,1,2])/self.Simulation.Dx;
-            d2v_y = (self.Simulation.Grid[X,Y_,1,2] - 2*self.Simulation.Grid[X,Y,1,2] + self.Simulation.Grid[X,_Y,1,2]/self.Simulation.Dx;
+            dv_y = (self.Simulation.Grid[X,Y_,1,1] - self.Simulation.Grid[X,Y,1,1])/self.Simulation.Dx;
+            d2v_y = (self.Simulation.Grid[X,Y_,1,1] - 2*self.Simulation.Grid[X,Y,1,1] + self.Simulation.Grid[X,_Y,1,1])/pow(self.Simulation.Dx,2);
+            du_y = (self.Simulation.Grid[X,Y_,0,1] - self.Simulation.Grid[X,Y,0,1])/self.Simulation.Dx;
+            d2u_y = (self.Simulation.Grid[X,Y_,0,1] - 2*self.Simulation.Grid[X,Y,0,1] + self.Simulation.Grid[X,_Y,0,1])/pow(self.Simulation.Dx,2);
 
+            #Solving for Displacements in the X directio
+            
+            self.Simulation.Grid[X,Y,0,2] = 2*self.Simulation.Grid[X,Y,0,1] - self.Simulation.Grid[X,Y,0,0] + pow(self.Simulation.Dt,2)*(c_t2*d2u_y + self.Simulation.MaterialProperties.BetaT*c_t2*(dv_y*d2u_y + du_y*d2v_y))
+            self.Simulation.Grid[X,Y,1,2] = 2*self.Simulation.Grid[X,Y,1,1] - self.Simulation.Grid[X,Y,1,0] + pow(self.Simulation.Dt,2)*(c_l2*d2v_y + self.Simulation.MaterialProperties.BetaT*c_t2*du_y*d2u_y)# + self.Simulation.MaterialProperties.BetaT*c_t2*du_y*d2u_y)
+ 
             
          
             #Space for adding source. Must figure out modular solution. add as setSource function?
@@ -114,8 +111,8 @@ class Solver:
             if self.Simulation.Mixing != True:
                 self.Simulation.Grid[-1,:,0,2] = self.Simulation.Grid[-2,:,0,2];
             #self.Simulation.Grid[0,:,0,2] = self.Simulation.Grid[1,:,0,2];
-            self.Simulation.Grid[:,-1,0,2] = self.Simulation.Grid[:,-2,0,2];
-            self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2];
+            self.Simulation.Grid[-1,:,0,2] = self.Simulation.Grid[-2,:,0,2];
+            self.Simulation.Grid[0,:,0,2] = self.Simulation.Grid[1,:,0,2];
 #NL UPDATE
             #self.Simulation.NLGrid[-1,:,0,2] = self.Simulation.NLGrid[-2,:,0,2];
             self.Simulation.NLGrid[0,:,0,2] = 0;
@@ -128,15 +125,8 @@ class Solver:
             
             self.Simulation.Grid[:,:,0,0] = self.Simulation.Grid[:,:,0,1]
             self.Simulation.Grid[:,:,0,1] =  self.Simulation.Grid[:,:,0,2]
-            
-            self.Simulation.NLGrid[:,:,1,0] = self.Simulation.NLGrid[:,:,1,1]
-            self.Simulation.NLGrid[:,:,1,1] =  self.Simulation.NLGrid[:,:,1,2]
-            
-            self.Simulation.NLGrid[:,:,0,0] = self.Simulation.NLGrid[:,:,0,1]
-            self.Simulation.NLGrid[:,:,0,1] =  self.Simulation.NLGrid[:,:,0,2]
-            #Updated
 #            print i
-            if i%22 == 0:
+            if i%5 == 0:
                 if self.Simulation.ViewMovie == True:
                     self.putMovie(0.01)    
                     sys.stdout.write('==')
