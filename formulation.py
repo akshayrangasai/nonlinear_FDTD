@@ -6,6 +6,8 @@ import defaults as df
 import sys
 from solver import Solver as sl
 import scipy.io as sio
+from matplotlib.pyplot import plot,figure
+   
 
 #####################################################################
 #Rules of code: Class elements always begin with a capital letter. Defaults are always allcaps. Arguments to functions to mimic class members.
@@ -28,7 +30,7 @@ class simulation:
             return (float)(self.WaveProperties.WaveLength/12.0)
         elif self.Mesh == 2:
             return (float)(self.WaveProperties.WaveLength/64.0)
-        else:
+        elif self.Mesh == 3:
             return (float)(self.WaveProperties.WaveLength/128.0)
     
     #Time is of type float; Dimensions is a list of floats.
@@ -82,7 +84,7 @@ class simulation:
         self.Dt = self.setStep(self.Dx)
         
         #print self.Dx
-        ##List of elements
+        ##List of elementsb
         self.ElementSpan = [round(X/self.Dx) for X in self.Dimensions]
         
         #Append Dimensions
@@ -94,7 +96,8 @@ class simulation:
         self.NLGrid = sp.zeros(tuple(self.ElementSpan), float)
     	self.SourceSignal = sp.zeros((round(self.Time/self.Dt),1))
     	self.SData = sp.zeros((round(self.Time/self.Dt),1))
-        self.ViewMovie = False	
+        self.ViewMovie = False
+        self.viewPlot = True
     
 def __init__():
     args = sys.argv    
@@ -106,8 +109,13 @@ def __init__():
     if 'movie' in args:
         sim.ViewMovie = True
     solution = sl(sim)
-    if 'plot' in args:
+    
+    if 'noplot' in args:
         pass
+    else:
+        figure(5)
+        plot(sim.SData)        
+    
     if 'save' in args:
         try:
             ind = args.index('savenames')
