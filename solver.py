@@ -36,7 +36,7 @@ class Solver:
         X_S = round(self.Location[0]) 
         Y_S = slice(round(self.Simulation.ElementSpan[1]/2) - round(self.Width[0]/2), round(self.Simulation.ElementSpan[1]/2) + round(self.Width[0]/2))
       
-        self.Simulation.Grid[Y_S,index,waveType,2] = (1-cos(2*pi*frequency*i*self.Simulation.Dt/self.Simulation.Pulses))*cos(2*pi*self.Simulation.WaveProperties.Frequency*i*self.Simulation.Dt)*1e-8
+        self.Simulation.Grid[Y_S,index,waveType,2] = (1-cos(2*pi*frequency*i*self.Simulation.Dt/self.Simulation.Pulses))*cos(2*pi*frequency*i*self.Simulation.Dt)*1e-8
         #print self.Simulation.Grid[X_S, round(self.Simulation.ElementSpan[1]/2) - round(self.Width[0]/2) + 1,0,2]
             
     #Line Sources only, currently. Multiple Sources must be accounted for, Must think of a matrix solution. So much fight for something that might not even work. Pain.
@@ -93,17 +93,17 @@ class Solver:
             
          
             #Space for adding source. Must figure out modular solution. add as setSource function?
-            if(i <= round((1.0/(self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
+            if(i <= round(self.Simulation.Pulses*(1.0/(self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
                 self.putSource(i,self.Simulation.WaveProperties.Frequency, 0, TRANSVERSE)
             else:
                 self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2]
             
             if self.Simulation.Mixing == True:
                 
-                if(i <= round((1.0/(4*self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
-                    self.putSource(i,4*self.Simulation.WaveProperties.Frequency,-1,LONGITUDINAL)
+                if(i <= round(self.Simulation.Pulses*(1.0/(0.997*4*self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
+                    self.putSource(i,0.997*4*self.Simulation.WaveProperties.Frequency,-1,LONGITUDINAL)
                 else:
-                    self.Simulation.Grid[:,-1,0,2] = self.Simulation.Grid[:,-2,0,2]
+                    self.Simulation.Grid[:,-1,1,2] = self.Simulation.Grid[:,-2,1,2]
   
 
                  #self.putSource(0)            

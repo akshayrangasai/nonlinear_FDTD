@@ -1,9 +1,9 @@
-FREQUENCY = 1e6
+FREQUENCY = 2.5e6
 A = -3.1*(10^11)
 B = 0
 C = 0
 BOUNDARY = 0 #Purely Reflecting
-DIMENSIONS = [.010 , 0.010] #metres
+DIMENSIONS = [.010 , 0.030] #metres
 MESH = 2 #0, 1, 2, 3 Coarse, Medium ,fine and extrafine mesh l/8, l/12, l/64, l/128
 MU = 2.68e10
 Lambda = 5.43e10
