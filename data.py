@@ -15,7 +15,7 @@ class waveProperties:
 
 
 class materialProperties:
-    def __init__(self, Mu = None, K = None, Rho = None,  A = None, B = None, C = None):
+    def __init__(self, Mu = None, K = None, Rho = None,  A = None, B = None, C = None,l = None, m = None, Lambda = None):
         
         ##Initialize All defaults if none.
         
@@ -48,11 +48,26 @@ class materialProperties:
             self.C = df.C
         else:
             self.C = C
-            
-        self.WaveVelocityL = sqrt((self.K + (4*self.Mu/3))/self.Rho)
+       
+        if l is None:
+            self.l = df.l
+        else:
+            self.l = l
+
+        if m is None:
+            self.m = df.m
+        else:
+            self.m = m
+        
+        if Lambda is None:
+            self.Lambda = df.Lambda
+        else:
+            self.Lambda = Lambda 
+        
+        self.WaveVelocityL = sqrt((self.Lambda + (2*self.Mu))/self.Rho)
         self.WaveVelocityT = sqrt(self.Mu/self.Rho)
-        self.BetaL = 3*pow(self.WaveVelocityL,2) + (1.0/self.Rho)*(2*self.A + 6*self.B + 2*self.C)
-        self.BetaT = pow(self.WaveVelocityT,2) + (1.0/self.Rho)*(self.A/2 + self.B)
+        self.BetaL = 3 + 2*(self.l + 2*self.m)/(self.Lambda + 2*self.Mu)
+        self.BetaT = (self.Lambda + 2*self.Mu)/self.Mu + self.m/self.Mu
             
 class waveGuide:
 
