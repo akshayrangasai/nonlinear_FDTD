@@ -34,9 +34,13 @@ class Solver:
         #Adding default Source
 #waveType 0 - Transverse. 1 - Longitudinal
         X_S = round(self.Location[0]) 
-        Y_S = slice(round(self.Simulation.ElementSpan[1]/2) - round(self.Width[0]/2), round(self.Simulation.ElementSpan[1]/2) + round(self.Width[0]/2))
+        Y_S = slice(round(self.Simulation.ElementSpan[0]/2) - round(self.Width[1]/2), round(self.Simulation.ElementSpan[0]/2) + round(self.Width[1]/2))
       
-        self.Simulation.Grid[Y_S,index,waveType,2] = (1-cos(2*pi*frequency*i*self.Simulation.Dt/self.Simulation.Pulses))*cos(2*pi*frequency*i*self.Simulation.Dt)*1e-8
+        #Raised Cosine Pulse.
+        #self.Simulation.Grid[Y_S,index,waveType,2] = (1-cos(2*pi*frequency*i*self.Simulation.Dt/self.Simulation.Pulses))*cos(2*pi*frequency*i*self.Simulation.Dt)*1e-8
+        #Sine Pulse. Trying to recreate the paper
+        self.Simulation.Grid[Y_S,index,waveType,2] = sin(2*pi*frequency*i*self.Simulation.Dt)*1e-8
+
         #print self.Simulation.Grid[X_S, round(self.Simulation.ElementSpan[1]/2) - round(self.Width[0]/2) + 1,0,2]
             
     #Line Sources only, currently. Multiple Sources must be accounted for, Must think of a matrix solution. So much fight for something that might not even work. Pain.
@@ -97,6 +101,8 @@ class Solver:
                 self.putSource(i,self.Simulation.WaveProperties.Frequency, 0, TRANSVERSE)
             else:
                 self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2]
+                self.Simulation.Grid[:,0,1,2] = self.Simulation.Grid[:,1,1,2]
+
             
             if self.Simulation.Mixing == True:
                 
@@ -104,6 +110,8 @@ class Solver:
                     self.putSource(i,0.997*4*self.Simulation.WaveProperties.Frequency,-1,LONGITUDINAL)
                 else:
                     self.Simulation.Grid[:,-1,1,2] = self.Simulation.Grid[:,-2,1,2]
+                    self.Simulation.Grid[:,-1,0,2] = self.Simulation.Grid[:,-2,0,2]
+
   
 
                  #self.putSource(0)            
@@ -111,22 +119,22 @@ class Solver:
             
             #self.putBoundary()
                             
-            self.Simulation.SourceSignal[i,0] = sum(self.Simulation.Grid[:,-2,1,2])/self.Simulation.Grid.shape[1]# + self.Simulation.NLGrid[1,round(self.Simulation.Grid.shape[1]/2),0,2]
+            self.Simulation.SourceSignal[i,0] = sum(self.Simulation.Grid[:,-2,0,2])/self.Simulation.Grid.shape[1]# + self.Simulation.NLGrid[1,round(self.Simulation.Grid.shape[1]/2),0,2]
 
              
             
             
-            self.Simulation.SData[i,0] =  sum(self.Simulation.Grid[:,2,0,2])/self.Simulation.Grid.shape[1]  
+            self.Simulation.SData[i,0] =  sum(self.Simulation.Grid[:,1,0,2])/self.Simulation.Grid.shape[1]  
             #print self.Simulation.Grid[15,15,0,2]
             #Boundary COnditions. Making the ends soft reflections. Let's see how that works out.
             if self.Simulation.Mixing != True:
                 self.Simulation.Grid[-1,:,0,2] = self.Simulation.Grid[-2,:,0,2];
             #self.Simulation.Grid[0,:,0,2] = self.Simulation.Grid[1,:,0,2];
-            self.Simulation.Grid[-1,:,0,2] = self.Simulation.Grid[-2,:,0,2];
+            #self.Simulation.Grid[-1,:,0,2] = self.Simulation.Grid[-2,:,0,2];
             self.Simulation.Grid[0,:,0,2] = self.Simulation.Grid[1,:,0,2];
 #NL UPDATE
             #self.Simulation.NLGrid[-1,:,0,2] = self.Simulation.NLGrid[-2,:,0,2];
-            self.Simulation.NLGrid[0,:,0,2] = 0;
+            #self.Simulation.NLGrid[0,:,0,2] = 0;
             #self.Simulation.NLGrid[:,-1,0,2] = self.Simulation.NLGrid[:,-2,0,2];
             #self.Simulation.NLGrid[:,0,0,2] = self.Simulation.NLGrid[:,1,0,2];
 

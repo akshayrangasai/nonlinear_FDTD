@@ -73,7 +73,7 @@ class simulation:
         else:
             self.Pulses = Pulses
         
-        self.Time = 2*self.Reflections*self.Dimensions[0]/self.MaterialProperties.WaveVelocityL
+        self.Time = 2*self.Reflections*self.Dimensions[1]/self.MaterialProperties.WaveVelocityL
     
         #1D, 2D or 3D 
         self.DimensionCount = len(self.Dimensions)
@@ -104,6 +104,7 @@ def __init__():
     args = [arg.replace('--','') for arg in args]
     names = []
     sim = simulation()
+    print sim.Dt
     if 'mixing' in args:
         sim.setMixing(True)
     if 'movie' in args:
