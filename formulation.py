@@ -36,6 +36,24 @@ class simulation:
     #Time is of type float; Dimensions is a list of floats.
     
     
+    def setParam(self, paramName, value):
+        
+        if paramName == 'l':
+            self.MaterialProperties.l = value
+        if paramName == 'm':
+            self.MaterialProperties.m = value
+
+
+    def getParam(self, paramName):
+        
+        if paramName == 'l':
+            return self.MaterialProperties.l
+        if paramName == 'm':
+            return self.MaterialProperties.m
+
+        return 0
+    
+    
     def __init__(self, MaterialProperties = None, WaveProperties = None, Reflections = None, Dimensions = None, WaveGuide = None, Mesh = None, Pulses = None):
         
         if MaterialProperties is None:
@@ -131,4 +149,5 @@ def __init__():
 
 
 
-__init__()
+if __name__ == "__main__":
+    __init__()
