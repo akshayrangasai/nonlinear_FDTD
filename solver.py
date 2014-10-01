@@ -97,10 +97,10 @@ class Solver:
             
          
             #Space for adding source. Must figure out modular solution. add as setSource function?
-            if(i <= round(self.Simulation.Pulses*(1.0/(self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
-                self.putSource(i,self.Simulation.WaveProperties.Frequency, 0, TRANSVERSE)
-            else:
-                self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2]
+            #if(i <= round(self.Simulation.Pulses*(1.0/(self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
+            #    self.putSource(i,self.Simulation.WaveProperties.Frequency, 0, TRANSVERSE)
+            #else:
+            #    self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2]
                 #self.Simulation.Grid[:,0,1,2] = self.Simulation.Grid[:,1,1,2]
 
             
@@ -122,9 +122,11 @@ class Solver:
             #Boundary COnditions. Making the ends soft reflections. Let's see how that works out.
             if self.Simulation.Mixing != True:
                 self.Simulation.Grid[-1,:,0,2] = self.Simulation.Grid[-2,:,0,2]
-            self.Simulation.Grid[:,0,1,2] = self.Simulation.Grid[:,1,1,2]
-            self.Simulation.Grid[:,-1,0,2] = self.Simulation.Grid[:,-2,0,2]
-            self.Simulation.Grid[:,-2,1,2] = self.Simulation.Grid[:,-1,1,2]
+            
+            self.Simulation.Grid[:,0,1,2] = 0#self.Simulation.Grid[:,1,1,2]
+            self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2]
+            self.Simulation.Grid[:,-1,0,2] = 0#self.Simulation.Grid[:,-2,0,2]
+            self.Simulation.Grid[:,-1,1,2] = self.Simulation.Grid[:,-0,1,2]
 #NL UPDATE
             #self.Simulation.NLGrid[-1,:,0,2] = self.Simulation.NLGrid[-2,:,0,2];
             #self.Simulation.NLGrid[0,:,0,2] = 0;
@@ -135,12 +137,17 @@ class Solver:
             
             if self.Simulation.Mixing == True:
                 
-                if(i <= round(self.Simulation.Pulses*(1.0/(0.997*4*self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)+1):
+                if(i <= round(self.Simulation.Pulses*(1.0/(0.997*4*self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
                     self.putSource(i,0.997*4*self.Simulation.WaveProperties.Frequency,-1,LONGITUDINAL)
                 #else:
                     #self.Simulation.Grid[:,-1,1,2] = self.Simulation.Grid[:,-2,1,2]
                     #self.Simulation.Grid[:,-1,0,2] = self.Simulation.Grid[:,-2,0,2]
-
+            
+            if(i <= round(self.Simulation.Pulses*(1.0/(self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
+                self.putSource(i,self.Simulation.WaveProperties.Frequency, 0, TRANSVERSE)
+            #else:
+            #    self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2]
+ 
  
             self.Simulation.Grid[:,:,1,0] = self.Simulation.Grid[:,:,1,1]
             self.Simulation.Grid[:,:,1,1] =  self.Simulation.Grid[:,:,1,2]
@@ -152,7 +159,7 @@ class Solver:
                 #print i
                 if self.Simulation.ViewMovie == True:
                     self.putMovie(0.01)    
-                print '==\r'
+                sys.stdout.write('=='*int(round(i/round(0.1*r_var))))
                 
                 #p.plot.show()
         #print self.Simulation.MaterialProperties.BetaL, self.Simulation.MaterialProperties.BetaT, self.Simulation.MaterialProperties.WaveVelocityL, self.Simulation.Dt
