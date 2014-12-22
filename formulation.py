@@ -15,6 +15,9 @@ from matplotlib.pyplot import plot,figure
 
 class simulation:
     
+    def save(self, filename):
+        sio.savemat(filename,{"SData":self.SData, "SourceSignal":self.SourceSignal})
+
     def setMixing(self, val):
         self.Mixing = val
 

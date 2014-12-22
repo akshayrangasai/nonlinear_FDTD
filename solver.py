@@ -31,13 +31,18 @@ class Solver:
             
     def putSource(self, i, frequency, index, waveType = 0):
         #Multiply with gaussian to remove edge effects.
+        
         #Adding default Source
-#waveType 0 - Transverse. 1 - Longitudinal
+        
+        #waveType 0 - Transverse. 1 - Longitudinal
+        
         X_S = round(self.Location[0]) 
         Y_S = slice(round(self.Simulation.ElementSpan[0]/2) - round(self.Width[1]/2), round(self.Simulation.ElementSpan[0]/2) + round(self.Width[1]/2))
       
         #Raised Cosine Pulse.
+        
         #self.Simulation.Grid[Y_S,index,waveType,2] = (1-cos(2*pi*frequency*i*self.Simulation.Dt/self.Simulation.Pulses))*cos(2*pi*frequency*i*self.Simulation.Dt)*1e-8
+        
         #Sine Pulse. Trying to recreate the paper
         self.Simulation.Grid[Y_S,index,waveType,2] = sin(2*pi*frequency*i*self.Simulation.Dt)*1e-8
 
@@ -95,58 +100,42 @@ class Solver:
             self.Simulation.Grid[X,Y,1,2] = 2*self.Simulation.Grid[X,Y,1,1] - self.Simulation.Grid[X,Y,1,0] + pow(self.Simulation.Dt,2)*(c_l2*d2v_y + self.Simulation.MaterialProperties.BetaL*c_l2*dv_y*d2v_y + self.Simulation.MaterialProperties.BetaT*c_t2*du_y*d2u_y)
  
             
-         
-            #Space for adding source. Must figure out modular solution. add as setSource function?
-            #if(i <= round(self.Simulation.Pulses*(1.0/(self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
-            #    self.putSource(i,self.Simulation.WaveProperties.Frequency, 0, TRANSVERSE)
-            #else:
-            #    self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2]
-                #self.Simulation.Grid[:,0,1,2] = self.Simulation.Grid[:,1,1,2]
-
             
-              
-
-                 #self.putSource(0)            
-            #Space for adding boundary conditions. Create a setBoundary Condition. Should be peaceful
-            
-            #self.putBoundary()
-                            
-            #self.Simulation.SourceSignal[i,0] = sum(self.Simulation.Grid[:,-2,0,2])/self.Simulation.Grid.shape[1]# + self.Simulation.NLGrid[1,round(self.Simulation.Grid.shape[1]/2),0,2]
-            #LScan
             self.Simulation.SourceSignal[i,0] = sum(self.Simulation.Grid[:,-2,1,2])/self.Simulation.Grid.shape[1]
              
             
             self.Simulation.SData[i,0] = sum(self.Simulation.Grid[:,1,1,2])/self.Simulation.Grid.shape[1] 
-            #self.Simulation.SData[i,0] =  sum(self.Simulation.Grid[:,1,0,2])/self.Simulation.Grid.shape[1]  
-            #print self.Simulation.Grid[15,15,0,2]
-            #Boundary COnditions. Making the ends soft reflections. Let's see how that works out.
-            if self.Simulation.Mixing != True:
-                self.Simulation.Grid[-1,:,0,2] = self.Simulation.Grid[-2,:,0,2]
             
-            self.Simulation.Grid[:,0,1,2] = 0#self.Simulation.Grid[:,1,1,2]
-            self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2]
-            self.Simulation.Grid[:,-1,0,2] = 0#self.Simulation.Grid[:,-2,0,2]
-            self.Simulation.Grid[:,-1,1,2] = self.Simulation.Grid[:,-0,1,2]
-#NL UPDATE
-            #self.Simulation.NLGrid[-1,:,0,2] = self.Simulation.NLGrid[-2,:,0,2];
-            #self.Simulation.NLGrid[0,:,0,2] = 0;
-            #self.Simulation.NLGrid[:,-1,0,2] = self.Simulation.NLGrid[:,-2,0,2];
-            #self.Simulation.NLGrid[:,0,0,2] = self.Simulation.NLGrid[:,1,0,2];
+            #self.Simulation.SData[i,0] =  sum(self.Simulation.Grid[:,1,0,2])/self.Simulation.Grid.shape[1]  
+            
+            #print self.Simulation.Grid[15,15,0,2]
+            
+            #Boundary COnditions. Making the ends soft reflections. Let's see how that works out.
+
+            
+            if self.Simulation.Mixing is not True:
+                self.Simulation.Grid[-1,:,0,2] = self.Simulation.Grid[-2,:,0,2]
+            else:
+            #    self.Simulation.Grid[:,0,1,2] = self.Simulation.Grid[:,1,1,2]
+            #    self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2]
+                self.Simulation.Grid[:,-1,0,2] = self.Simulation.Grid[:,-2,0,2]
+            #    self.Simulation.Grid[:,-2,1,2] = self.Simulation.Grid[:,-1,1,2]
 
              #Updates go Here
             
             if self.Simulation.Mixing == True:
                 
                 if(i <= round(self.Simulation.Pulses*(1.0/(0.997*4*self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
-                    self.putSource(i,0.997*4*self.Simulation.WaveProperties.Frequency,-1,LONGITUDINAL)
-                #else:
-                    #self.Simulation.Grid[:,-1,1,2] = self.Simulation.Grid[:,-2,1,2]
+                    self.putSource(i,0.997*4*self.Simulation.WaveProperties.Frequency,0,LONGITUDINAL)
+                else:
+                    pass
+                    #self.Simulation.Grid[:,-2,1,2] = self.Simulation.Grid[:,-1,1,2]
                     #self.Simulation.Grid[:,-1,0,2] = self.Simulation.Grid[:,-2,0,2]
             
             if(i <= round(self.Simulation.Pulses*(1.0/(self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
-                self.putSource(i,self.Simulation.WaveProperties.Frequency, 0, TRANSVERSE)
-            #else:
-            #    self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2]
+                self.putSource(i,self.Simulation.WaveProperties.Frequency, -1, TRANSVERSE)
+            else:
+                self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2]
  
  
             self.Simulation.Grid[:,:,1,0] = self.Simulation.Grid[:,:,1,1]
