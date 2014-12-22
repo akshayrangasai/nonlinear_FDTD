@@ -112,7 +112,7 @@ class Solver:
             
             #Boundary COnditions. Making the ends soft reflections. Let's see how that works out.
 
-            
+            '''
             if self.Simulation.Mixing is not True:
                 self.Simulation.Grid[-1,:,0,2] = self.Simulation.Grid[-2,:,0,2]
             else:
@@ -122,21 +122,23 @@ class Solver:
             #    self.Simulation.Grid[:,-2,1,2] = self.Simulation.Grid[:,-1,1,2]
 
              #Updates go Here
+            '''
+
+                                           
+            if(i <= round(self.Simulation.Pulses*(1.0/(self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
+                self.putSource(i,self.Simulation.WaveProperties.Frequency, -1, TRANSVERSE)
+            else:
+                self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2]
+                self.Simulation.Grid[:,0,1,2] = self.Simulation.Grid[:,1,1,2]
+            
             
             if self.Simulation.Mixing == True:
                 
                 if(i <= round(self.Simulation.Pulses*(1.0/(0.997*4*self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
                     self.putSource(i,0.997*4*self.Simulation.WaveProperties.Frequency,0,LONGITUDINAL)
                 else:
-                    pass
-                    #self.Simulation.Grid[:,-2,1,2] = self.Simulation.Grid[:,-1,1,2]
-                    #self.Simulation.Grid[:,-1,0,2] = self.Simulation.Grid[:,-2,0,2]
-            
-            if(i <= round(self.Simulation.Pulses*(1.0/(self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
-                self.putSource(i,self.Simulation.WaveProperties.Frequency, -1, TRANSVERSE)
-            else:
-                self.Simulation.Grid[:,0,0,2] = self.Simulation.Grid[:,1,0,2]
- 
+                    self.Simulation.Grid[:,-1,1,2] = self.Simulation.Grid[:,-2,1,2]
+                    self.Simulation.Grid[:,-1,0,2] = self.Simulation.Grid[:,-2,0,2]
  
             self.Simulation.Grid[:,:,1,0] = self.Simulation.Grid[:,:,1,1]
             self.Simulation.Grid[:,:,1,1] =  self.Simulation.Grid[:,:,1,2]
