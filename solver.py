@@ -157,6 +157,7 @@ class Solver:
                 #p.plot.show()
         #print self.Simulation.MaterialProperties.BetaL, self.Simulation.MaterialProperties.BetaT, self.Simulation.MaterialProperties.WaveVelocityL, self.Simulation.Dt
         
+    '''
         figure("Source Signal")
         plot(self.Simulation.SourceSignal)
 
@@ -164,6 +165,7 @@ class Solver:
         figure("Non Linear Signal")
         plot(self.Simulation.SData)
         show()
+    '''
         
 #        np.save("TotalSignal",self.Simulation.SourceSignal) 
 #        np.save("LinSignal",sdata)
