@@ -68,9 +68,18 @@ class materialProperties:
         self.WaveVelocityT = sqrt(self.Mu/self.Rho)
         self.BetaL = 3 + 2*(self.l + 2*self.m)/(self.Lambda + 2*self.Mu)
         self.BetaT = (self.Lambda + 2*self.Mu)/self.Mu + self.m/self.Mu
-            
+    
+    def refreshParams(self):
+        
+        
+        self.WaveVelocityL = sqrt((self.Lambda + (2*self.Mu))/self.Rho)
+        self.WaveVelocityT = sqrt(self.Mu/self.Rho)
+        self.BetaL = 3 + 2*(self.l + 2*self.m)/(self.Lambda + 2*self.Mu)
+        self.BetaT = (self.Lambda + 2*self.Mu)/self.Mu + self.m/self.Mu
+        
+        
 class waveGuide:
-
+   
     def __init__(self, Boundary = None):
         if Boundary is None:
             self.Boundary = df.BOUNDARY

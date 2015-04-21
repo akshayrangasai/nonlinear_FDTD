@@ -43,9 +43,14 @@ class simulation:
         
         if paramName == 'l':
             self.MaterialProperties.l = value
+            #self.MaterialProperties.BetaT = (self.MaterialProperties.Lambda + 2*self.MaterialProperties.Mu)/self.MaterialProperties.Mu + self.MaterialProperties.m/self.MaterialProperties.Mu
+            self.MaterialProperties.refreshParams() 
         if paramName == 'm':
             self.MaterialProperties.m = value
+            self.MaterialProperties.refreshParams() 
 
+        if paramName == 'BetaT':
+            self.MaterialProperties.BetaT = value
 
     def getParam(self, paramName):
         
@@ -53,6 +58,8 @@ class simulation:
             return self.MaterialProperties.l
         if paramName == 'm':
             return self.MaterialProperties.m
+        if paramName == 'BetaT':
+            return self.MaterialProperties.BetaT
 
         return 0
     
