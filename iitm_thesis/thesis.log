@@ -1,15 +1,19 @@
-This is pdfTeX, Version 3.14159-1.10b (Web2C 7.4.5) (format=pdflatex 2008.4.8)  11 FEB 2009 10:58
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.8.26)  22 APR 2015 17:19
+entering extended mode
+ %&-line parsing enabled.
 **thesis.tex
-(./thesis.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
-LaTeX2e <2001/06/01>
-Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, n
-ohyphenation, loaded.
+(./thesis.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppers
+orbian, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, uken
+glish, loaded.
 (./iitmdiss.cls
 Document Class: iitmdiss 2005/03/09 Class for IIT-Madras Dissertations
-(/usr/share/texmf/tex/latex/base/report.cls
-Document Class: report 2001/04/21 v1.4e Standard LaTeX document class
-(/usr/share/texmf/tex/latex/base/size12.clo
-File: size12.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -24,12 +28,20 @@ File: size12.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf/tex/latex/misc/geometry.sty
-Package: geometry 2002/07/08 v3.2 Page Geometry
+(/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
+Package: geometry 2008/12/21 v4.2 Page Geometry
 
-(/usr/share/texmf/tex/latex/graphics/keyval.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
 )
 \Gm@cnth=\count88
 \Gm@cntv=\count89
@@ -40,9 +52,7 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \Gm@even@mp=\dimen106
 \Gm@dimlist=\toks15
 
-(/usr/share/texmf/tex/latex/config/geometry.cfg
-File: geometry.cfg 2001/06/05 v1.0 teTeX (uncustomised setup)
-)
+(/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg)
 
 Package geometry Warning: Over-specification in `h'-direction.
     `width' (0.8\paperwidth ) is ignored.
@@ -55,145 +65,235 @@ Package geometry Warning: Over-specification in `v'-direction.
 Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
 
 Package: `setspace' 6.7 <2000/12/01>
-) (./atbeginend.sty) (/usr/share/texmf/tex/latex/caption/caption.sty
-Package: caption 1995/04/05 v1.4b caption package (AS)
-\captionmargin=\skip43
-\as@captionbox=\box26
-\as@captionwidth=\skip44
+) (./atbeginend.sty) (/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen107
+\captionmargin@=\dimen108
+\captionwidth=\dimen109
+\caption@indent=\dimen110
+\caption@parindent=\dimen111
+\caption@hangindent=\dimen112
 )
-(/usr/share/texmf/tex/latex/natbib/natbib.sty
-Package: natbib 2000/07/24 7.0a (PWD)
-\bibhang=\skip45
-\bibsep=\skip46
-LaTeX Info: Redefining \cite on input line 508.
-\c@NAT@ctr=\count91
+\c@ContinuedFloat=\count91
+)
+(/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
+Package: natbib 2009/07/16 8.31 (PWD, AO)
+\bibhang=\skip43
+\bibsep=\skip44
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count92
 ))
-(/usr/share/texmf/tex/latex/psnfss/times.sty
-Package: times 2002/09/08 PSNFSS-v9.0a (SPQR) 
+(/usr/share/texmf-texlive/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 ) (./t1enc.sty
 Package: t1enc 1994/06/01 Standard LaTeX package
 )
-(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf/tex/latex/graphics/graphics.sty
-Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf/tex/latex/graphics/trig.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 80.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texmf/tex/latex/graphics/pdftex.def
-File: pdftex.def 2002/06/19 v0.03k graphics/color for pdftex
-\Gread@gobject=\count92
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count93
 ))
-\Gin@req@height=\dimen107
-\Gin@req@width=\dimen108
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
 )
-(/usr/share/texmf/tex/latex/oberdiek/epstopdf.sty
-Package: epstopdf 2001/02/04 v1.1 Conversion with epstopdf on the fly (HO)
-)
-(/usr/share/texmf/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2003/01/22 v6.73n Hypertext links for LaTeX
-\@linkdim=\dimen109
-\Hy@linkcounter=\count93
-\Hy@pagecounter=\count94
+(/usr/share/texmf-texlive/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2009/10/17 v2.4 Conversion with epstopdf on the fly (HO)
 
-(/usr/share/texmf/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2003/01/22 v6.73n Hyperref: PDFDocEncoding definition (HO)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2009/10/17 v2.4 Base part for package epstopdf
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
 )
-(/usr/share/texmf/tex/latex/config/hyperref.cfg
-File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive and teTeX
+(/usr/share/texmf-texlive/tex/latex/oberdiek/grfext.sty
+Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
 )
-Package hyperref Info: Hyper figures OFF on input line 1792.
-Package hyperref Info: Link nesting OFF on input line 1797.
-Package hyperref Info: Hyper index ON on input line 1800.
-Package hyperref Info: Plain pages ON on input line 1805.
-Package hyperref Info: Backreferencing OFF on input line 1812.
+(/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
+t (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
+ (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
+)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)
+
+Package epstopdf Warning: Shell escape feature is not enabled.
+
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 433.
+(/usr/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2009/10/26 v1.1 Configuration of epstopdf for TeX Live
+)))
+(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+
+(/usr/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/hycolor.sty
+Package: hycolor 2009/10/02 v1.5 Code for color options of hyperref/bookmark (H
+O)
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
+Package: xcolor-patch 2009/10/02 xcolor patch
+))
+\@linkdim=\dimen115
+\Hy@linkcounter=\count94
+\Hy@pagecounter=\count95
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 2975.
+Package hyperref Info: Link nesting OFF on input line 2980.
+Package hyperref Info: Hyper index ON on input line 2983.
+Package hyperref Info: Plain pages OFF on input line 2990.
+Package hyperref Info: Backreferencing OFF on input line 2995.
 
 Implicit mode ON; LaTeX internals redefined
-Package hyperref Info: Bookmarks ON on input line 1916.
-(/usr/share/texmf/tex/latex/html/url.sty
-Package: url 1999/03/02  ver 1.4  Verb mode for urls, email addresses, and file
- names
+Package hyperref Info: Bookmarks ON on input line 3191.
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 2055.
-\Fld@menulength=\count95
-\Field@Width=\dimen110
-\Fld@charsize=\dimen111
-\Choice@toks=\toks16
-\Field@toks=\toks17
-Package hyperref Info: Hyper figures OFF on input line 2513.
-Package hyperref Info: Link nesting OFF on input line 2518.
-Package hyperref Info: Hyper index ON on input line 2521.
-Package hyperref Info: backreferencing OFF on input line 2528.
-Package hyperref Info: Link coloring OFF on input line 2533.
-\c@Item=\count96
-\c@Hfootnote=\count97
+LaTeX Info: Redefining \url on input line 3428.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bitset.sty
+Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/intcalc.sty
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
 )
-*hyperref using driver hypertex*
-(/usr/share/texmf/tex/latex/hyperref/hypertex.def
-File: hypertex.def 2003/01/22 v6.73n Hyperref driver for HyperTeX specials
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bigintcalc.sty
+Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
+))
+\Fld@menulength=\count96
+\Field@Width=\dimen116
+\Fld@charsize=\dimen117
+\Field@toks=\toks16
+Package hyperref Info: Hyper figures OFF on input line 4377.
+Package hyperref Info: Link nesting OFF on input line 4382.
+Package hyperref Info: Hyper index ON on input line 4385.
+Package hyperref Info: backreferencing OFF on input line 4392.
+Package hyperref Info: Link coloring OFF on input line 4397.
+Package hyperref Info: Link coloring with OCG OFF on input line 4402.
+Package hyperref Info: PDF/A mode OFF on input line 4407.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-(/usr/share/texmf/tex/latex/amsmath/amsmath.sty
+\Hy@abspage=\count97
+\c@Item=\count98
+\c@Hfootnote=\count99
+)
+
+Package hyperref Warning: Wrong driver `hypertex.def';
+(hyperref)                pdfTeX is running in PDF mode.
+(hyperref)                Forcing driver `hpdftex.def'.
+
+*hyperref using driver hpdftex*
+(/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
+\Fld@listcount=\count100
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip47
+\@mathmargin=\skip45
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texmf/tex/latex/amsmath/amstext.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texmf/tex/latex/amsmath/amsgen.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks18
-\ex@=\dimen112
+\@emptytoks=\toks17
+\ex@=\dimen118
 ))
-(/usr/share/texmf/tex/latex/amsmath/amsbsy.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen113
+\pmbraise@=\dimen119
 )
-(/usr/share/texmf/tex/latex/amsmath/amsopn.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count98
+\inf@bad=\count101
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count99
-\leftroot@=\count100
+\uproot@=\count102
+\leftroot@=\count103
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count101
-\DOTSCASE@=\count102
+\classnum@=\count104
+\DOTSCASE@=\count105
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box27
-\strutbox@=\box28
-\big@size=\dimen114
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen120
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count103
-\c@MaxMatrixCols=\count104
-\dotsspace@=\muskip10
-\c@parentequation=\count105
-\dspbrk@lvl=\count106
-\tag@help=\toks19
-\row@=\count107
-\column@=\count108
-\maxfields@=\count109
-\andhelp@=\toks20
-\eqnshift@=\dimen115
-\alignsep@=\dimen116
-\tagshift@=\dimen117
-\tagwidth@=\dimen118
-\totwidth@=\dimen119
-\lineht@=\dimen120
-\@envbody=\toks21
-\multlinegap=\skip48
-\multlinetaggap=\skip49
-\mathdisplay@stack=\toks22
+\macc@depth=\count106
+\c@MaxMatrixCols=\count107
+\dotsspace@=\muskip11
+\c@parentequation=\count108
+\dspbrk@lvl=\count109
+\tag@help=\toks18
+\row@=\count110
+\column@=\count111
+\maxfields@=\count112
+\andhelp@=\toks19
+\eqnshift@=\dimen121
+\alignsep@=\dimen122
+\tagshift@=\dimen123
+\tagwidth@=\dimen124
+\totwidth@=\dimen125
+\lineht@=\dimen126
+\@envbody=\toks20
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 ) (./thesis.aux)
@@ -215,9 +315,11 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 13.
 
-(/usr/share/texmf/tex/latex/psnfss/t1ptm.fd
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
+*geometry auto-detecting driver*
+*geometry detected driver: pdftex*
 -------------------- Geometry parameters
 paper: a4paper
 landscape: --
@@ -257,59 +359,51 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-
-(/usr/share/texmf/tex/context/base/supp-pdf.tex
-(/usr/share/texmf/tex/context/base/supp-mis.tex
-loading : Context Support Macros / Missing
-\protectiondepth=\count110
-\scratchcounter=\count111
-\scratchtoks=\toks23
-\scratchdimen=\dimen121
-\scratchskip=\skip50
-\scratchmuskip=\muskip11
-\scratchbox=\box29
-\scratchread=\read1
-\scratchwrite=\write3
-\zeropoint=\dimen122
-\minusone=\count112
-\thousandpoint=\dimen123
-\emptytoks=\toks24
-\nextbox=\box30
-\nextdepth=\dimen124
-\everyline=\toks25
-\!!counta=\count113
-\!!countb=\count114
-\recursecounter=\count115
-)
-loading : Context Support Macros / PDF
-\nofMPsegments=\count116
-\nofMParguments=\count117
-\everyMPtoPDFconversion=\toks26
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count113
+\scratchdimen=\dimen127
+\scratchbox=\box28
+\nofMPsegments=\count114
+\nofMParguments=\count115
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen128
+\MPnumerator=\count117
+\everyMPtoPDFconversion=\toks23
 )
 Package hyperref Info: Link coloring OFF on input line 13.
- (/usr/share/texmf/tex/latex/hyperref/nameref.sty
-Package: nameref 2001/01/27 v2.19 Cross-referencing by name of section
+ (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
+Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
+Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+)
 \c@section@level=\count118
 )
 LaTeX Info: Redefining \ref on input line 13.
 LaTeX Info: Redefining \pageref on input line 13.
+ (./thesis.out)
+(./thesis.out)
+\@outlinefile=\write3
+\openout3 = `thesis.out'.
+
+\AtBeginShipoutBox=\box29
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
-
-<iitm.pdf, id=1, 310.15875pt x 310.15875pt>
+ <iitm.pdf, id=51, 109.40875pt x 109.40875pt>
 File: iitm.pdf Graphic file (type pdf)
- <use iitm.pdf> [0
-Non-PDF special ignored!
-Non-PDF special ignored!
+ <use iitm.pdf>
+[0
 
-
-Non-PDF special ignored!
-Non-PDF special ignored!{/usr/share/texmf/dvips/config/pdftex.map} <./iitm.pdf>
-]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./iitm.pdf>]
 Certificate
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 34.
@@ -318,237 +412,128 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--53
 
  []
 
-[0
-Non-PDF special ignored!
-Non-PDF special ignored!
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.70 \acknowledgements
+                       [0
 
 ] [1
-Non-PDF special ignored!
-Non-PDF special ignored!
 
+] [2
 
-Non-PDF special ignored!
-Non-PDF special ignored!] [2
-Non-PDF special ignored!
-Non-PDF special ignored!
-
-
-Non-PDF special ignored!
-Non-PDF special ignored!] (./thesis.toc)
+] (./thesis.toc)
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
 
  [3
-Non-PDF special ignored!
-Non-PDF special ignored!
 
-
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] (./thesis.lot)
+] (./thesis.lot)
 \tf@lot=\write5
 \openout5 = `thesis.lot'.
 
  [4
-Non-PDF special ignored!
-Non-PDF special ignored!
 
-
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] (./thesis.lof)
+]
+(./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
  [5
-Non-PDF special ignored!
-Non-PDF special ignored!
 
+] [6
 
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] [6
-Non-PDF special ignored!
-Non-PDF special ignored!
+] [7
 
-
-Non-PDF special ignored!
-Non-PDF special ignored!] [7
-Non-PDF special ignored!
-Non-PDF special ignored!
-
-
-Non-PDF special ignored!
-Non-PDF special ignored!]
+]
 CHAPTER 1.
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 153.
-(/usr/share/texmf/tex/latex/psnfss/t1pcr.fd
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [1
-Non-PDF special ignored!
-Non-PDF special ignored!
 
 
+]
+Package epstopdf Info: Source file: <iitm.eps>
+(epstopdf)                    date: 2009-03-09 22:57:59
+(epstopdf)                    size: 627003 bytes
+(epstopdf)             Output file: <iitm-eps-converted-to.pdf>
+(epstopdf)                    date: 2009-03-09 22:58:12
+(epstopdf)                    size: 51219 bytes
+(epstopdf)             Command: <epstopdf --outfile=iitm-eps-converted-to.pdf i
+itm.eps>
+(epstopdf)             \includegraphics on input line 230.
+Package epstopdf Info: Output file is already uptodate.
 
-Non-PDF special ignored!
-Non-PDF special ignored!]
-epstopdf iitm.eps
-system()...disabled.
+<iitm-eps-converted-to.pdf, id=123, 109.40875pt x 109.40875pt>
+File: iitm-eps-converted-to.pdf Graphic file (type pdf)
 
-File: iitm.pdf Graphic file (type pdf)
-<use iitm.pdf>
-epstopdf iitm.eps
-system()...disabled.
-
-File: iitm.pdf Graphic file (type pdf)
-<use iitm.pdf> [2
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] [3
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!]
+<use iitm-eps-converted-to.pdf>
+Package epstopdf Info: Source file: <iitm.eps>
+(epstopdf)                    date: 2009-03-09 22:57:59
+(epstopdf)                    size: 627003 bytes
+(epstopdf)             Output file: <iitm-eps-converted-to.pdf>
+(epstopdf)                    date: 2009-03-09 22:58:12
+(epstopdf)                    size: 51219 bytes
+(epstopdf)             Command: <epstopdf --outfile=iitm-eps-converted-to.pdf i
+itm.eps>
+(epstopdf)             \includegraphics on input line 231.
+Package epstopdf Info: Output file is already uptodate.
+File: iitm-eps-converted-to.pdf Graphic file (type pdf)
+ <use iitm-eps-converted-to.pdf> [2] [3 <./iitm-eps-converted-to.pdf>]
 Overfull \hbox (6.90817pt too wide) in paragraph at lines 268--281
-[]/ptmr8t@12.0pt/I've in-cluded a sim-ple ex-am-ple BIBT[]X file along in this 
-di-rec-tory called []/pcrr8t@12.0pt/refs.bib/ptmr8t@12.0pt/.
+[]\T1/ptm/m/n/12 I've in-cluded a sim-ple ex-am-ple BIBT[]X file along in this 
+di-rec-tory called []\T1/pcr/m/n/12 refs.bib\T1/ptm/m/n/12 .
  []
 
 
 Overfull \hbox (10.40765pt too wide) in paragraph at lines 268--281
-/ptmr8t@12.0pt/L[]T[]X. Ba-si-cally, to cite the au-thor along with the au-thor
- name and year use []/pcrr8t@12.0pt/\cite{key}
+\T1/ptm/m/n/12 L[]T[]X. Ba-si-cally, to cite the au-thor along with the au-thor
+ name and year use []\T1/pcr/m/n/12 \cite{key}
  []
 
 
 Overfull \hbox (17.56482pt too wide) in paragraph at lines 268--281
-/ptmr8t@12.0pt/where []/pcrr8t@12.0pt/key /ptmr8t@12.0pt/is the ci-ta-tion key 
-for your bib-li-og-ra-phy en-try. You can also use []/pcrr8t@12.0pt/\citet{key}
+\T1/ptm/m/n/12 where []\T1/pcr/m/n/12 key \T1/ptm/m/n/12 is the ci-ta-tion key 
+for your bib-li-og-ra-phy en-try. You can also use []\T1/pcr/m/n/12 \citet{key}
 
  []
 
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 300.
 
-(/usr/share/texmf/tex/latex/psnfss/omsptm.fd
+(/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 300.
- [4
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] [5
-Non-PDF special ignored!
-Non-PDF special ignored!]
+ [4] [5]
 APPENDIX A.
 (./thesis.bbl [6
-Non-PDF special ignored!
-Non-PDF special ignored!
 
+]) [7
 
-Non-PDF special ignored!
-Non-PDF special ignored!]) [7
-Non-PDF special ignored!
-Non-PDF special ignored!
+] [8
 
-
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] [8
-Non-PDF special ignored!
-Non-PDF special ignored!
-
-
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] (./thesis.aux) ) 
+] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 3830 strings out of 95437
- 49673 string characters out of 1190234
- 104526 words of memory out of 1000001
- 6777 multiletter control sequences out of 10000+50000
- 33569 words of font info for 50 fonts, out of 500000 for 1000
- 14 hyphenation exceptions out of 1000
- 37i,8n,41p,283b,437s stack positions out of 1500i,500n,5000p,200000b,5000s
- 80 PDF objects out of 300000
- 0 named destinations out of 131072
- 17 words of extra memory for PDF output out of 65536
-{/usr/share/texmf/dvips/tetex/bbad153
-f.enc}</usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb>{/usr/share/texmf/dvi
-ps/tetex/f7b6d320.enc}</usr/share/texmf/fonts/type1/bluesky/cm/cmr8.pfb>{/usr/s
-hare/texmf/dvips/psnfss/8r.enc}{/usr/share/texmf/dvips/tetex/aae443f0.enc}</usr
-/share/texmf/fonts/type1/bluesky/cm/cmmi12.pfb>
-Output written on thesis.pdf (17 pages, 156759 bytes).
+ 6717 strings out of 494647
+ 98340 string characters out of 1173989
+ 177690 words of memory out of 3000000
+ 9758 multiletter control sequences out of 15000+50000
+ 33569 words of font info for 50 fonts, out of 3000000 for 9000
+ 297 hyphenation exceptions out of 8191
+ 43i,8n,41p,319b,399s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/
+courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb><
+/usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-tex
+live/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (17 pages, 222061 bytes).
+PDF statistics:
+ 216 PDF objects out of 1000 (max. 8388607)
+ 40 named destinations out of 1000 (max. 500000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
+

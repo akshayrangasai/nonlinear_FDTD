@@ -1,0 +1,191 @@
+
+\documentclass[MTech]{iitmdiss}
+
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{verbatim}
+\usepackage{floatrow}
+\usepackage{fullpage}
+\usepackage{listings}
+%\usepackage{txfonts,pxfonts,amsfonts}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{graphicx}
+
+\usepackage[square]{natbib}
+\usepackage[colorlinks=true,linkcolor=black]{hyperref}
+%\usepackage{hyperref} % hyperlinks for references.
+\usepackage[all]{hypcap}
+\usepackage{complexity}
+\usepackage[named]{algo}
+%\usepackage{algpseudocode}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{corr}{Corollary}
+\newtheorem{lma}{Lemma}
+\newtheorem{case}{Case}
+\newtheorem{rmrk}{Remark}
+\newtheorem{prp}{Proposition}
+\newtheorem{dfn}{Definition}
+\newtheorem{qn}{Question}
+\newtheorem{att}{Attempt}
+\newtheorem{ex}{Example}
+\newtheorem{flaw}{Flaw in Attempt}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{float}
+\xdefinecolor{gray}{rgb}{0.4,0.4,0.4}
+\xdefinecolor{blue}{RGB}{58,95,205}% R's royalblue3; #3A5FCD
+
+% Strut macros for skipping spaces above and below text in tables. 
+\def\abovestrut#1{\rule[0in]{0in}{#1}\ignorespaces}
+\def\belowstrut#1{\rule[-#1]{0in}{#1}\ignorespaces}
+
+\def\abovespace{\abovestrut{0.20in }}
+\def\aroundspace{\abovestrut{0.20in}\belowstrut{0.10in}}
+\def\belowspace{\belowstrut{0.10in}}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lstset
+{
+	numbers=left,
+    breaklines=true,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
+}
+
+\def\thesistitle{}
+\def\thesisauthor{D Akshay Rangasai}
+
+
+\begin{document}
+\bibliographystyle{iitm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Title page
+
+\title{\thesistitle}
+
+\author{\thesisauthor}
+
+\date{May 2015}
+\department{Mechanical Engineering}
+
+%\nocite{*}
+\begin{singlespace}
+\maketitle 
+\end{singlespace} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Certificate
+\certificate
+
+\vspace*{0.5in}
+
+\noindent This is to certify that the thesis entitled {\bf {\thesistitle}}, 
+submitted by {\bf {\thesisauthor}}, to the Indian Institute of Technology, 
+Madras, for the award of the degree of {\bf Master of Technology}, 
+is a bona fide record of the research work carried out by him under my
+supervision. The contents of this thesis, in full or in parts, have not been
+submitted to any other Institute or University for the award of any degree or
+diploma.
+
+\vspace*{1.4in}
+\hspace*{-0.25in}
+\begin{minipage}{0.5\textwidth}
+\begin{singlespace}
+\noindent {\bf Krishnan Balasubramanian} \\
+\noindent Research Guide \\ 
+\noindent Professor \\
+\noindent Dept. of Mechanical Engineering\\
+\noindent IIT-Madras, 600 036 \\
+\end{singlespace}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{singlespace}
+\noindent {\bf L Vijayaraghavan} \\
+\noindent Research Co-Guide \\ 
+\noindent Professor \\
+\noindent Dept. of Mechanical Engineering\\
+\noindent IIT-Madras, 600 036 \\
+\end{singlespace}
+\end{minipage}
+\vspace*{0.20in}
+\noindent Place: Chennai\\ 
+Date:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\acknowledgements
+\input{acknowledgements.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+
+\abstract
+\input{abstract.tex}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of contents etc.
+
+\begin{singlespace}
+\tableofcontents
+\thispagestyle{empty}
+
+\listoftables
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\listoffigures
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\end{singlespace}
+
+\pagebreak
+
+
+%The main text will follow from this point so set the page numbering
+%to arabic from here on.
+\pagenumbering{arabic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Introduction.
+%\input{misc.tex}
+%\input{questions.tex}
+\chapter{Introduction}
+\input{introduction.tex}
+
+\chapter{Future Work}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendices.
+%\appendix
+\chapter{Appendix}
+\input{appendix.tex}
+\section{Solver Code}
+\lstinputlisting[language=Python]{../solver.py}
+\pagebreak
+\section{Problem Formulation code Code}
+\lstinputlisting[language=Python]{../formulation.py}
+\pagebreak
+\lstinputlisting[language=Python]{../data.py}
+\pagebreak
+\lstinputlisting[language=Python]{../constants.py}
+\pagebreak
+\lstinputlisting[language=Python]{../framework.py}
+\pagebreak
+\lstinputlisting[language=Python]{../sensitivity_analysis.py}
+\pagebreak
+\lstinputlisting[language=Python]{../GMM_regression.py}
+\pagebreak
+\lstinputlisting[language=Python]{../defaults.py}
+% Bibliography.
+\pagebreak
+\begin{singlespace}
+  \begin{small}
+	\bibliography{bibliography}
+  \end{small}
+\end{singlespace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
