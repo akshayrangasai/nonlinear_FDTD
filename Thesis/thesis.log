@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.8.26)  23 APR 2015 00:46
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.8.26)  25 APR 2015 12:32
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -564,7 +564,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
- <iitm.pdf, id=39, 333.245pt x 333.245pt>
+ <iitm.pdf, id=43, 333.245pt x 333.245pt>
 File: iitm.pdf Graphic file (type pdf)
  <use iitm.pdf> [0
 
@@ -625,7 +625,11 @@ l.122 \acknowledgements
 
 ]
 CHAPTER 1.
-(./introduction.tex) [1
+(./introduction.tex
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+) [1
 
 ]
 CHAPTER 2.
@@ -678,21 +682,24 @@ Package natbib Warning: Empty `thebibliography' environment on input line 7.
 
 ] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 10937 strings out of 494647
- 151881 string characters out of 1173989
- 466584 words of memory out of 3000000
- 13296 multiletter control sequences out of 15000+50000
+ 10939 strings out of 494647
+ 151905 string characters out of 1173989
+ 466587 words of memory out of 3000000
+ 13297 multiletter control sequences out of 15000+50000
  22410 words of font info for 56 fonts, out of 3000000 for 9000
  297 hyphenation exceptions out of 8191
  43i,6n,43p,582b,1708s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fon
-ts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/u
-tmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (36 pages, 227906 bytes).
+pdfTeX warning (dest): name{section.1.1} has been referenced 
+but does not exist, replaced by a fixed one
+
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/times
+/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/sh
+are/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (36 pages, 228743 bytes).
 PDF statistics:
- 921 PDF objects out of 1000 (max. 8388607)
- 614 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 926 PDF objects out of 1000 (max. 8388607)
+ 615 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
