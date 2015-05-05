@@ -22,8 +22,8 @@ def ensemble(value, noise):
     mixture = GMM()
     newdataset = addNoise(noise)
     temp = np.copy(newdataset[:,-1])
-    newdataset[:,-1] = newdataset[:,2]
-    newdataset[:,2] = temp
+    #newdataset[:,-1] = newdataset[:,2]
+    #newdataset[:,2] = temp
     #print newdataset[:,-1], newdataset[:,3]
     for ensemble in range(0,value):
         np.random.shuffle(newdataset)
@@ -43,9 +43,9 @@ def ensemble(value, noise):
         #plt.scatter(dataset[-10:-1,0],dataset[-10:-1,-1])
         #plt.plot(preds)
         #plt.show()
-        np.savetxt('data/trainm_%d_snr_%d.csv'%(ensemble,noise),train,delimiter=',')
-        np.savetxt('data/testm_%d_snr_%d.csv'%(ensemble,noise),test,delimiter=',')
-        np.savetxt('data/testm_predict_%d_snr_%d.csv'%(ensemble,noise),test_pred,delimiter=',')
+        np.savetxt('data/forward_train_%d_snr_%d.csv'%(ensemble,noise),train,delimiter=',')
+        np.savetxt('data/forward_test_%d_snr_%d.csv'%(ensemble,noise),test,delimiter=',')
+        np.savetxt('data/forward_test_predict_%d_snr_%d.csv'%(ensemble,noise),test_pred,delimiter=',')
         #sp.io.savemat('data/train_%d_snr_%d.mat'%(ensemble,noise),train)
         #sp.io.savemat('data/test_%d_snr_%d.mat'%(ensemble,noise),test)
         #sp.io.savemat('data/test_predict_%d_snr_%d.mat'%(ensemble,noise),test_pred)
