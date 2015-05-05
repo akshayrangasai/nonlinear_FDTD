@@ -21,8 +21,8 @@ def ensemble(value, noise):
     mixture = GMM()
     newdataset = addNoise(noise)
     temp = np.copy(newdataset[:,-1])
-    newdataset[:,-1] = newdataset[:,3]
-    newdataset[:,3] = temp
+    #newdataset[:,-1] = newdataset[:,3]
+    #newdataset[:,3] = temp
     print newdataset[:,-1], newdataset[:,3]
     for ensemble in range(0,value):
         np.random.shuffle(newdataset)
@@ -41,6 +41,6 @@ def ensemble(value, noise):
         #plt.scatter(dataset[-10:-1,0],dataset[-10:-1,-1])
         #plt.plot(preds)
         #plt.show()
-        np.savetxt('data/train_%d.csv'%ensemble,train,delimiter=',')
-        np.savetxt('data/test_%d.csv'%ensemble,test,delimiter=',')
+        np.savetxt('data/forward_train_%d.csv'%ensemble,train,delimiter=',')
+        np.savetxt('data/forward_test_%d.csv'%ensemble,test,delimiter=',')
 ensemble(5, 10)
