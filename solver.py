@@ -126,7 +126,7 @@ class Solver:
 
                                            
             if(i <= round(self.Simulation.Pulses*(1.0/(self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
-                self.putSource(i,self.Simulation.WaveProperties.Frequency, 0, TRANSVERSE)
+                self.putSource(i,self.Simulation.WaveProperties.Frequency, 0, LONGITUDINAL)
             else:
                 self.Simulation.Grid[:,1,0,2] = self.Simulation.Grid[:,0,0,2]
                 self.Simulation.Grid[:,-2,0,2] = self.Simulation.Grid[:,-1,0,2]
