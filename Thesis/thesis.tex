@@ -156,11 +156,17 @@ Date:
 
 \chapter{Literature Review}
 \input{litreview.tex}
-\chapter{Future Work}
-
+\chapter{Description Of Simulations}
+\input{simulation.tex}
+\chapter{Sensitivity Analysis}
+\input{sensitivity.tex}
+\chapter{Inverse Model}
+\input{inverse.tex}
+\chapter{Summary and Future Work}
+\input{final.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Appendices.
-%\appendix
+\appendix
 \chapter{Appendix}
 \input{appendix.tex}
 \section{Solver Code}
@@ -182,12 +188,17 @@ Date:
 \lstinputlisting[language=Python]{../defaults.py}
 % Bibliography.
 \pagebreak
-\begin{singlespace}
-  \begin{small}
-	\bibliography{bibliography}
-  \end{small}
-\end{singlespace}
+%\begin{singlespace}
+%  \begin{small}
+%  	\bibliographystyle{plain}
+%	\bibliography{bibliography}
+%  \end{small}
+%\end{singlespace}
 
+\begin{thebibliography}{9}
+\input{bibliography.bib}
+
+\end{thebibliography}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
