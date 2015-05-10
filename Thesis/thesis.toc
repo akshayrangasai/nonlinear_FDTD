@@ -18,9 +18,11 @@
 \contentsline {subsection}{\numberline {3.2.1}Discretization of the wave-equation}{6}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Numerical Considerations}{8}{subsection.3.2.2}
 \contentsline {subsubsection}{Stability Criteria}{8}{section*.9}
-\contentsline {chapter}{\numberline {4}Sensitivity Analysis}{9}{chapter.4}
-\contentsline {chapter}{\numberline {5}Inverse Model}{10}{chapter.5}
-\contentsline {chapter}{\numberline {6}Summary and Future Work}{11}{chapter.6}
-\contentsline {chapter}{\numberline {A}Appendix}{12}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solver Code}{12}{section.A.1}
-\contentsline {section}{\numberline {A.2}Problem Formulation code Code}{20}{section.A.2}
+\contentsline {subsubsection}{Boundary Conditions}{8}{section*.10}
+\contentsline {subsubsection}{Initial condition}{9}{section*.11}
+\contentsline {chapter}{\numberline {4}Sensitivity Analysis}{10}{chapter.4}
+\contentsline {chapter}{\numberline {5}Inverse Model}{11}{chapter.5}
+\contentsline {chapter}{\numberline {6}Summary and Future Work}{12}{chapter.6}
+\contentsline {chapter}{\numberline {A}Appendix}{13}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solver Code}{13}{section.A.1}
+\contentsline {section}{\numberline {A.2}Problem Formulation code Code}{21}{section.A.2}
