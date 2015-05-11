@@ -5,8 +5,15 @@ from math import sin, pi, cos
 from matplotlib.pyplot import imshow, plot, show, draw, pause, clim, figure
 import sys
 from constants import *
+transverse = []
+longi = []
+
+_transverse = 0
+_longi = 0
 #from matplotlib import figure
 class Solver:
+    _transverse = 0
+    _longi = 0
 
     Simulation = None
     Location = None
@@ -42,7 +49,8 @@ class Solver:
         #Raised Cosine Pulse.
         
         self.Simulation.Grid[Y_S,index,waveType,2] = (1-cos(2*pi*frequency*i*self.Simulation.Dt/self.Simulation.Pulses))*cos(2*pi*frequency*i*self.Simulation.Dt)*1e-8
-        
+        return  (1-cos(2*pi*frequency*i*self.Simulation.Dt/self.Simulation.Pulses))*cos(2*pi*frequency*i*self.Simulation.Dt)*1e-8
+
         #Sine Pulse. Trying to recreate the paper
         #self.Simulation.Grid[Y_S,index,waveType,2] = sin(2*pi*frequency*i*self.Simulation.Dt)*1e-8
 
@@ -72,7 +80,7 @@ class Solver:
         #First Equation We'll be solving will be the standard wave equation.
         self.setSource()
         #Setting the Source first. Now, let's solve the DE like a boss
-        
+        #        
         _X = slice(0,self.Simulation.ElementSpan[0]-2)
         X = slice(1,self.Simulation.ElementSpan[0]-1)
         X_ = slice(2,self.Simulation.ElementSpan[0])
@@ -123,11 +131,14 @@ class Solver:
 
              #Updates go Here
             '''
-
                                            
             if(i <= round(self.Simulation.Pulses*(1.0/(self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
-                self.putSource(i,self.Simulation.WaveProperties.Frequency, 0, TRANSVERSE)
+                transverse.append(self.putSource(i,self.Simulation.WaveProperties.Frequency, 0, TRANSVERSE))
             else:
+                if(self._transverse == 0):
+                    plot(transverse)
+                    show()
+                    self._transverse = 1
                 self.Simulation.Grid[:,1,0,2] = self.Simulation.Grid[:,0,0,2]
                 self.Simulation.Grid[:,-2,0,2] = self.Simulation.Grid[:,-1,0,2]
                 #self.Simulation.Grid[:,0,1,2] = self.Simulation.Grid[:,1,1,2]
@@ -136,8 +147,12 @@ class Solver:
             if self.Simulation.Mixing == True:
                 
                 if(i <= round(self.Simulation.Pulses*(1.0/(0.997*4*self.Simulation.WaveProperties.Frequency))/self.Simulation.Dt)):
-                    self.putSource(i,0.997*4*self.Simulation.WaveProperties.Frequency,-1,LONGITUDINAL)
+                    longi.append(self.putSource(i,0.997*4*self.Simulation.WaveProperties.Frequency,-1,LONGITUDINAL))
                 else: 
+                    if(self._longi == 0):
+                        plot(longi)
+                        show()
+                        self._longi = 1
                     self.Simulation.Grid[:,-1,1,2] = self.Simulation.Grid[:,-2,1,2]
                     self.Simulation.Grid[:,0,1,2] = self.Simulation.Grid[:,1,1,2]
                     #self.Simulation.Grid[:,-1,0,2] = self.Simulation.Grid[:,-2,0,2]

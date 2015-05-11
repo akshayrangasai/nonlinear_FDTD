@@ -17,9 +17,21 @@
 \BOOKMARK [1][-]{section.3.2}{Governing Equations}{chapter.3}
 \BOOKMARK [2][-]{subsection.3.2.1}{Discretization of the wave-equation}{section.3.2}
 \BOOKMARK [2][-]{subsection.3.2.2}{Numerical Considerations}{section.3.2}
+\BOOKMARK [1][-]{section.3.3}{Simulation}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.3.1}{Sources}{section.3.3}
+\BOOKMARK [2][-]{subsection.3.3.2}{Simulation Parameters}{section.3.3}
+\BOOKMARK [1][-]{section.3.4}{Simulation Results}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.4.1}{Snapshots of Simulation}{section.3.4}
+\BOOKMARK [2][-]{subsection.3.4.2}{Validation of Simulation}{section.3.4}
 \BOOKMARK [0][-]{chapter.4}{Sensitivity Analysis}{}
 \BOOKMARK [0][-]{chapter.5}{Inverse Model}{}
 \BOOKMARK [0][-]{chapter.6}{Summary and Future Work}{}
 \BOOKMARK [0][-]{appendix.A}{Appendix}{}
 \BOOKMARK [1][-]{section.A.1}{Solver Code}{appendix.A}
-\BOOKMARK [1][-]{section.A.2}{Problem Formulation code Code}{appendix.A}
+\BOOKMARK [1][-]{section.A.2}{Problem Formulation Code}{appendix.A}
+\BOOKMARK [1][-]{section.A.3}{Material Data Setting Code and Constants}{appendix.A}
+\BOOKMARK [1][-]{section.A.4}{Code for Automating Simulations}{appendix.A}
+\BOOKMARK [1][-]{section.A.5}{Code to Analyse Sensitivity}{appendix.A}
+\BOOKMARK [1][-]{section.A.6}{Inverse Model Code}{appendix.A}
+\BOOKMARK [1][-]{section.A.7}{Defaults Code}{appendix.A}
+\BOOKMARK [0][-]{appendix.B}{Material Properties Used in Simulations}{}

@@ -132,7 +132,7 @@ def __init__():
     args = [arg.replace('--','') for arg in args]
     names = []
     sim = simulation()
-    print sim.Dt
+    print sim.Dt, sim.Dx, sim.MaterialProperties.WaveVelocityL, sim.WaveProperties.WaveLength
     if 'mixing' in args:
         sim.setMixing(True)
     if 'movie' in args:
