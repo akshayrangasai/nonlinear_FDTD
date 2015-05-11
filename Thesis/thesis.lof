@@ -16,6 +16,10 @@
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Simulation Results From DE solver\cite {Liu}\relax }}{15}{figure.caption.23}
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Zoomed solution and Fourier Transform of the solution from DE solver \cite {Liu}\relax }}{15}{figure.caption.24}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces FFT of generated wave\relax }}{19}{figure.caption.25}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces effect of l on the amplitude of generated wave\relax }}{20}{figure.caption.26}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces effect of m on the amplitude of generated wave\relax }}{20}{figure.caption.27}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

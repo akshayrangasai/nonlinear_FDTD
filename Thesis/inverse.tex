@@ -1,0 +1,46 @@
+\section{Introduction}
+\section{Fitting the forward model}
+
+\subsection{Linear Regression}
+\subsection{Support Vector Regression}
+\section{Statistical Techniques}
+\subsection{Noisy data}
+The data we have worked with till now has been data without any noise added to it. To validate the model, it is necessary to have a dataset that is contaminated with a few errors in sampling. Thus, to emulate an actual transducer's signal, we add noise to the data at Various SNRs. The results at various SNRs are compared to test the accuracy of the inverse model. Since we measure the amplitude of the resultant wave, the noise is added to the peak-to-peak amplitude value of the wave. 
+\subsection{Adding Noise}
+The Signal to Noise ratio for a signal can be defined as 
+
+\begin{equation}
+SNR = \frac{P_{signal}}{P_{noise}}
+\end{equation}
+
+\begin{equation}
+SNR = \frac{\sigma^2_{signal}}{\sigma^2_{noise}}
+\end{equation}
+
+\begin{equation}
+SNR = \frac{A^2_{signal}}{A^2_{noise}}
+\end{equation}
+
+To add noise to our amplitude signal, we calculate the power of the peak-to-peak amplitude signals, calculate the power and then add Gaussian white noise at a specific variance to match the desired Signal to Noise Ratio. In this case, we have worked with a signal to noise ratio from 2 to 20.
+\subsection{The Gaussian Process}
+Gaussian Processes for Machine Learning (GPML) is a generic supervised learning method primarily designed to solve regression problems.The gaussian process is a non-parametric method that works with hyperparameters. It is also a probabilistic method for regression.
+
+The advantages of Gaussian Processes for Machine Learning are:
+\begin{enumerate}
+        \item The prediction interpolates the observations (at least for regular correlation models).
+        \item The prediction is probabilistic (Gaussian) so that one can compute empirical confidence intervals and exceedance probabilities that might be used to refit (online fitting, adaptive fitting) the prediction in some region of interest.
+        \item Versatile: different linear regression models and correlation models can be specified. Common models are provided, but it is also possible to specify custom models provided they are stationary.
+\end{enumerate}
+The disadvantages of Gaussian Processes for Machine Learning include:
+\begin{enumerate}
+
+
+        \item It is not sparse. It uses the whole samples/features information to perform the prediction.
+        \item It loses efficiency in high dimensional spaces – namely when the number of features exceeds a few dozens. It might indeed give poor performance and it loses computational efficiency.
+        \item Classification is only a post-processing, meaning that one first need to solve a regression problem by providing the complete scalar float precision output y of the experiment one attempt to model.
+
+\end{enumerate}
+
+Due to the nature of the Gaussian Process, it can be used to solve global optimization problems. From the given advantages and disadvantages of GPML, it fits perfectly for solving our inverse problem. A brief mathematical background is given for the Gaussian Process. Interested readers are requested to refer to \cite{gp} \cite{gp_tut} for a more rigorous treatment of this subject.
+ 
+\section{Discussion and Results}

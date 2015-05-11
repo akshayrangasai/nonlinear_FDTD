@@ -24,7 +24,23 @@
 \BOOKMARK [2][-]{subsection.3.4.1}{Snapshots of Simulation}{section.3.4}
 \BOOKMARK [2][-]{subsection.3.4.2}{Validation of Simulation}{section.3.4}
 \BOOKMARK [0][-]{chapter.4}{Sensitivity Analysis}{}
+\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{Objectives of Sensitivity Analysis}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.2.1}{Caveats while performing sensitivity analysis}{section.4.2}
+\BOOKMARK [1][-]{section.4.3}{Methodology}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.3.1}{Generic Procedure}{section.4.3}
+\BOOKMARK [2][-]{subsection.4.3.2}{Approach for forward model}{section.4.3}
+\BOOKMARK [1][-]{section.4.4}{Results and Discussion}{chapter.4}
 \BOOKMARK [0][-]{chapter.5}{Inverse Model}{}
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}
+\BOOKMARK [1][-]{section.5.2}{Fitting the forward model}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.2.1}{Linear Regression}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.2}{Support Vector Regression}{section.5.2}
+\BOOKMARK [1][-]{section.5.3}{Statistical Techniques}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.3.1}{Noisy data}{section.5.3}
+\BOOKMARK [2][-]{subsection.5.3.2}{Adding Noise}{section.5.3}
+\BOOKMARK [2][-]{subsection.5.3.3}{The Gaussian Process}{section.5.3}
+\BOOKMARK [1][-]{section.5.4}{Discussion and Results}{chapter.5}
 \BOOKMARK [0][-]{chapter.6}{Summary and Future Work}{}
 \BOOKMARK [0][-]{appendix.A}{Appendix}{}
 \BOOKMARK [1][-]{section.A.1}{Solver Code}{appendix.A}
@@ -35,3 +51,4 @@
 \BOOKMARK [1][-]{section.A.6}{Inverse Model Code}{appendix.A}
 \BOOKMARK [1][-]{section.A.7}{Defaults Code}{appendix.A}
 \BOOKMARK [0][-]{appendix.B}{Material Properties Used in Simulations}{}
+\BOOKMARK [0][-]{appendix.C}{Closed Form Solution}{}
