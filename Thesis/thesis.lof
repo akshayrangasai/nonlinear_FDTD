@@ -1,24 +1,25 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces The Stress Strain Curve for a Ductile Material\relax }}{2}{figure.caption.6}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Generic Methodology of this Project\relax }}{5}{figure.caption.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic of the solid material as an FDTD grid\relax }}{7}{figure.caption.7}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Schematic of the setup the FDTD simulation is mimicking\relax }}{7}{figure.caption.8}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Longitudinal Pulse Excited at Source\relax }}{10}{figure.caption.12}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Transverse Pulse Excited at Source\relax }}{10}{figure.caption.13}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Snapshot of the Longitudinal Wave\relax }}{11}{figure.caption.16}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Snapshot of the Transverse Wave\relax }}{12}{figure.caption.17}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Snapshot of the Transverse Wave\relax }}{12}{figure.caption.18}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces A-scan of the longitudinal wave\relax }}{13}{figure.caption.19}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces A-scan of the transverse wave\relax }}{14}{figure.caption.20}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Zoomed A-scan of transverse wave\relax }}{14}{figure.caption.21}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Fourier Transform of the New Wave Generated\relax }}{15}{figure.caption.22}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Simulation Results From DE solver\cite {Liu}\relax }}{15}{figure.caption.23}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Zoomed solution and Fourier Transform of the solution from DE solver \cite {Liu}\relax }}{15}{figure.caption.24}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic of the solid material as an FDTD grid\relax }}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Schematic of the setup the FDTD simulation is mimicking\relax }}{8}{figure.caption.9}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Longitudinal Pulse Excited at Source\relax }}{11}{figure.caption.13}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Transverse Pulse Excited at Source\relax }}{11}{figure.caption.14}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Snapshot of the Longitudinal Wave\relax }}{12}{figure.caption.17}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Snapshot of the Transverse Wave\relax }}{13}{figure.caption.18}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Snapshot of the Transverse Wave\relax }}{13}{figure.caption.19}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces A-scan of the longitudinal wave\relax }}{14}{figure.caption.20}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces A-scan of the transverse wave\relax }}{15}{figure.caption.21}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Zoomed A-scan of transverse wave\relax }}{15}{figure.caption.22}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Fourier Transform of the New Wave Generated\relax }}{16}{figure.caption.23}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Simulation Results From DE solver\cite {Liu}\relax }}{16}{figure.caption.24}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Zoomed solution and Fourier Transform of the solution from DE solver \cite {Liu}\relax }}{16}{figure.caption.25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces FFT of generated wave\relax }}{19}{figure.caption.25}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces effect of l on the amplitude of generated wave\relax }}{20}{figure.caption.26}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces effect of m on the amplitude of generated wave\relax }}{20}{figure.caption.27}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces FFT of generated wave\relax }}{20}{figure.caption.26}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces effect of l on the amplitude of generated wave\relax }}{21}{figure.caption.27}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces effect of m on the amplitude of generated wave\relax }}{21}{figure.caption.28}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
