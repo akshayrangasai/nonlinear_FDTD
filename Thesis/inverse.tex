@@ -1,8 +1,22 @@
 \section{Introduction}
-\section{Fitting the forward model}
+In the classical problem, we deal with a set of input variables resulting in an output y. This method of getting an output using known inputs is known as the forward model. What if the inputs weren't measurable, but are of significance and the output is the only measurable quantity. This problem is known as the inverse model, where for a relationship that goes from $A \longrightarrow B$, we figure out the elements of $A$ from the elements of $B$. 
 
+Before we invert the model itself, we run our techniques on the forward model to determine its accuracy.  
+\section{Fitting the forward model}
 \subsection{Linear Regression}
-\subsection{Support Vector Regression}
+For the forward model, we have the values of l,m and the amplitude of the wave that is generated. Using the given parameters of l,m we must determine the relationship between l,m and amplitude. The first step that we have taken is the linear regression. The mathematical formulation of linear regression is shown below.
+$$\textbf{X} = [l m]$$
+$$b = [A]$$
+\begin{equation}
+A\textbf{X} = \textbf{b}
+\end{equation}
+For a non-square matrix X
+\begin{equation}
+A = (XX^T)^{-1}X^Tb
+\end{equation}
+
+The linear regression of the forward model 
+\subsection{The Gaussian Process}
 \section{Statistical Techniques}
 \subsection{Noisy data}
 The data we have worked with till now has been data without any noise added to it. To validate the model, it is necessary to have a dataset that is contaminated with a few errors in sampling. Thus, to emulate an actual transducer's signal, we add noise to the data at Various SNRs. The results at various SNRs are compared to test the accuracy of the inverse model. Since we measure the amplitude of the resultant wave, the noise is added to the peak-to-peak amplitude value of the wave. 
@@ -42,5 +56,32 @@ The disadvantages of Gaussian Processes for Machine Learning include:
 \end{enumerate}
 
 Due to the nature of the Gaussian Process, it can be used to solve global optimization problems. From the given advantages and disadvantages of GPML, it fits perfectly for solving our inverse problem. A brief mathematical background is given for the Gaussian Process. Interested readers are requested to refer to \cite{gp} \cite{gp_tut} for a more rigorous treatment of this subject.
- 
+
+\subsection{Background of Gaussian Process}
+The Gaussian Process instead of parametrizing the input output relationships of variables, instead assumes a prior over a distribution of functions. This helps eliminate the parametrization and associated pitfalls. Gaussian Process Treats each function as a sample from a multivariate Gaussian Distribution. Like a kernel method, it projects the finite dataset into an infinite dimensional space. To put it mathematically. Instead of parameterizing $y(\textbf{X},\textbf{w})$, we place a prior of $P(y(\textbf{x}))$. For the given data $D = {\textbf{X},\textbf{y}}$
+\begin{equation}
+p(\textbf{f}|\textbf{X}) = N(0,\textbf{K})
+\end{equation}    
+\begin{equation}
+K(x,x') = E[f(x)f(x')]
+\end{equation}
+Now, for a GP regression, we can write $y$ as
+\begin{equation}
+y = f + \epsilon
+\end{equation}
+\begin{equation}
+\epsilon = GWN(0,\sigma_e)
+\end{equation}
+
+For a test and train marginal likelihood,
+
+\begin{equation}
+p(y,y_t) = N(0, K_{N+T}) + \sigma^2_e \textbf{I}
+\end{equation}
+
+\begin{equation}
+p(y_T | y) = N(\mu_T, \Sigma_T)
+\end{equation}
+
+The solutions to this formulation are beyond the scope of this dissertation and the reader is requested to consult the references mentioned above. This problem now becomes an optimization problem to minimize log likelihood. This gives us our solution.
 \section{Discussion and Results}
