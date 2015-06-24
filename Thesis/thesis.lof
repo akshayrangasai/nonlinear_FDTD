@@ -1,27 +1,43 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces The Stress Strain Curve for a Ductile Material\relax }}{2}{figure.caption.6}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces The Stress Strain Curve for a Typical Material\relax }}{1}{figure.caption.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Generic Methodology of this Project\relax }}{5}{figure.caption.7}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Direction of resultant wave\cite {zarem}\relax }}{5}{figure.caption.7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Forbidden Modes of Wave Mixing \cite {zarem}\relax }}{5}{figure.caption.8}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Generic Methodology of this Project\relax }}{6}{figure.caption.9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic of the solid material as an FDTD grid\relax }}{8}{figure.caption.8}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Schematic of the setup the FDTD simulation is mimicking\relax }}{8}{figure.caption.9}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Longitudinal Pulse Excited at Source\relax }}{11}{figure.caption.13}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Transverse Pulse Excited at Source\relax }}{11}{figure.caption.14}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Snapshot of the Longitudinal Wave\relax }}{12}{figure.caption.17}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Snapshot of the Transverse Wave\relax }}{13}{figure.caption.18}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Snapshot of the Transverse Wave\relax }}{13}{figure.caption.19}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces A-scan of the longitudinal wave\relax }}{14}{figure.caption.20}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces A-scan of the transverse wave\relax }}{15}{figure.caption.21}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Zoomed A-scan of transverse wave\relax }}{15}{figure.caption.22}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Fourier Transform of the New Wave Generated\relax }}{16}{figure.caption.23}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Simulation Results From DE solver\cite {Liu}\relax }}{16}{figure.caption.24}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Zoomed solution and Fourier Transform of the solution from DE solver \cite {Liu}\relax }}{16}{figure.caption.25}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic of the solid material as an FDTD grid\relax }}{9}{figure.caption.10}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Schematic of the setup the FDTD simulation is mimicking\relax }}{9}{figure.caption.11}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Longitudinal Pulse Excited at Source\relax }}{12}{figure.caption.15}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Transverse Pulse Excited at Source\relax }}{13}{figure.caption.16}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Snapshot of the Longitudinal Wave\relax }}{13}{figure.caption.19}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Snapshot of the Transverse Wave\relax }}{14}{figure.caption.20}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Snapshot of the Transverse Wave\relax }}{14}{figure.caption.21}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces A-scan of the longitudinal wave\relax }}{15}{figure.caption.22}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces A-scan of the transverse wave\relax }}{16}{figure.caption.23}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Zoomed A-scan of transverse wave\relax }}{16}{figure.caption.24}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Fourier Transform of the New Wave Generated\relax }}{17}{figure.caption.25}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Simulation Results From DE solver\cite {Liu}\relax }}{17}{figure.caption.26}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Zoomed solution and Fourier Transform of the solution from DE solver \cite {Liu}\relax }}{17}{figure.caption.27}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces FFT of generated wave\relax }}{20}{figure.caption.26}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces effect of l on the amplitude of generated wave\relax }}{21}{figure.caption.27}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces effect of m on the amplitude of generated wave\relax }}{21}{figure.caption.28}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces FFT of generated wave\relax }}{21}{figure.caption.28}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces effect of l on the amplitude of generated wave\relax }}{22}{figure.caption.29}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces effect of m on the amplitude of generated wave\relax }}{22}{figure.caption.30}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Linear Regression of Data with Noise\relax }}{25}{figure.caption.31}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Linear Regression of Data without Noise\relax }}{25}{figure.caption.32}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Residual Plot of Data without Noise\relax }}{26}{figure.caption.33}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces SNR 2\relax }}{26}{figure.caption.34}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Normalized Error at SNR 2\relax }}{27}{figure.caption.35}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces SNR 8\relax }}{27}{figure.caption.36}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Normalized Error at SNR 8\relax }}{27}{figure.caption.37}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces SNR 12\relax }}{28}{figure.caption.38}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Normalized Error at SNR 12\relax }}{28}{figure.caption.39}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Prediction of Value of M at SNR 2\relax }}{31}{figure.caption.40}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces normalized Error of M at SNR 12\relax }}{32}{figure.caption.41}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Prediction of Value of M at SNR 8\relax }}{32}{figure.caption.42}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces normalized Error of M at SNR 8\relax }}{33}{figure.caption.43}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Prediction of Value of M at SNR 2\relax }}{33}{figure.caption.44}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces normalized Error of M at SNR 12\relax }}{33}{figure.caption.45}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

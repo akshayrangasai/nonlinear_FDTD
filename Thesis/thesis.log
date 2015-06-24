@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.8.26)  12 MAY 2015 03:47
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.8.26)  23 JUN 2015 18:49
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -453,21 +453,21 @@ LaTeX Info: Redefining \bm on input line 204.
 ) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 65.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -515,7 +515,7 @@ driver: pdftex
 -----------------------
 Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
-LaTeX Info: Redefining \subref on input line 64.
+LaTeX Info: Redefining \subref on input line 65.
 Package caption Info: float package is loaded.
 Package caption Info: floatrow package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -540,7 +540,7 @@ Package: fr-subfig 2007/12/24 v0.1g (beta) floatrow: additions for subfig
 \FBso@max=\skip74
 )
 \c@lstlisting=\count154
-Package hyperref Info: Link coloring ON on input line 64.
+Package hyperref Info: Link coloring ON on input line 65.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -550,8 +550,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count155
 )
-LaTeX Info: Redefining \ref on input line 64.
-LaTeX Info: Redefining \pageref on input line 64.
+LaTeX Info: Redefining \ref on input line 65.
+LaTeX Info: Redefining \pageref on input line 65.
  (./thesis.out)
 (./thesis.out)
 \@outlinefile=\write3
@@ -559,12 +559,12 @@ LaTeX Info: Redefining \pageref on input line 64.
 
 \AtBeginShipoutBox=\box34
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
- <iitm.pdf, id=223, 333.245pt x 333.245pt>
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+ <iitm.pdf, id=243, 333.245pt x 333.245pt>
 File: iitm.pdf Graphic file (type pdf)
  <use iitm.pdf>
 [0
@@ -572,25 +572,31 @@ File: iitm.pdf Graphic file (type pdf)
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./iitm.pdf>]
 Certificate
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--104
+Overfull \hbox (1.02368pt too wide) in paragraph at lines 89--96
+\OT1/ptm/m/n/10.95 This is to cer-tify that the the-sis en-ti-tled \OT1/ptm/b/n
+/10.95 Es-ti-ma-tion of Higher Or-der Elas-tic Con-stants Us-ing Collinear
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--106
 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 105.
+LaTeX Font Info:    Try loading font information for U+msa on input line 107.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 105.
+LaTeX Font Info:    Try loading font information for U+msb on input line 107.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 108--113
+Underfull \hbox (badness 10000) in paragraph at lines 110--115
 
  []
 
 
-Overfull \hbox (3.09352pt too wide) in paragraph at lines 96--118
+Overfull \hbox (3.09352pt too wide) in paragraph at lines 98--120
 []|  $[]$ $[]$
  []
 
@@ -598,13 +604,47 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.120 \acknowledgements
+l.122 \acknowledgements
                         [0
 
-] (./acknowledgements.tex) [1
+] (./acknowledgements.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 1--126
 
-] (./abstract.tex)
-[2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--126
+
+ []
+
+[1
+
+] (./abstract.tex) [2
 
 ] (./thesis.toc [3
 
@@ -618,34 +658,45 @@ l.120 \acknowledgements
 
  [6
 
-] (./thesis.lof)
+]
+(./thesis.lof [7
+
+])
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [7
-
-]
+ [8]
 CHAPTER 1.
 (./introduction.tex
-<images/chapter_1/stressstrain.png, id=367, 582.67688pt x 362.85562pt>
+<images/chapter_1/stressstrain.png, id=432, 582.67688pt x 362.85562pt>
 File: images/chapter_1/stressstrain.png Graphic file (type png)
 
 <use images/chapter_1/stressstrain.png> [1
 
-] [2 <./images/chapter_1/stressstrain.png (PNG copy)>]) [3]
+ <./images/chapter_1/stressstrain.png (PNG copy)>] [2]) [3]
 CHAPTER 2.
 (./litreview.tex
-<images/chapter_2/mthodology_generic.png, id=391, 301.95pt x 311.85pt>
+<images/chapter_2/directions_noncollinear.png, id=458, 495.8525pt x 259.97125pt
+>
+File: images/chapter_2/directions_noncollinear.png Graphic file (type png)
+ <use images/chapter_2/directions_noncollinear.png>
+<images/chapter_2/interaction.png, id=461, 843.15pt x 574.145pt>
+File: images/chapter_2/interaction.png Graphic file (type png)
+
+<use images/chapter_2/interaction.png> [4
+
+] [5 <./images/chapter_2/directions_noncollinear.png (PNG copy)> <./images/chap
+ter_2/interaction.png (PNG copy)>]
+<images/chapter_2/mthodology_generic.png, id=474, 301.95pt x 311.85pt>
 File: images/chapter_2/mthodology_generic.png Graphic file (type png)
 
-<use images/chapter_2/mthodology_generic.png>) [4
-
-] [5 <./images/chapter_2/mthodology_generic.png (PNG copy)>]
+<use images/chapter_2/mthodology_generic.png>) [6 <./images/chapter_2/mthodolog
+y_generic.png (PNG copy)>]
 CHAPTER 3.
-(./simulation.tex [6
+(./simulation.tex [7
 
 ]
-<images/chapter_3/schematic_GE.png, id=416, 1180.41pt x 248.93pt>
+<images/chapter_3/schematic_GE.png, id=496, 1180.41pt x 248.93pt>
 File: images/chapter_3/schematic_GE.png Graphic file (type png)
 
 <use images/chapter_3/schematic_GE.png>
@@ -653,91 +704,178 @@ Overfull \hbox (19.18774pt too wide) in paragraph at lines 66--67
  [] 
  []
 
-<images/chapter_3/schematic_liu.jpg, id=417, 934.49126pt x 510.90875pt>
+<images/chapter_3/schematic_liu.jpg, id=498, 934.49126pt x 510.90875pt>
 File: images/chapter_3/schematic_liu.jpg Graphic file (type jpg)
 
-<use images/chapter_3/schematic_liu.jpg> [7] [8 <./images/chapter_3/schematic_G
-E.png (PNG copy)> <./images/chapter_3/schematic_liu.jpg>] [9]
-<images/chapter_3/wave_1.png, id=448, 586.8324pt x 442.2924pt>
+<use images/chapter_3/schematic_liu.jpg> [8] [9 <./images/chapter_3/schematic_G
+E.png> <./images/chapter_3/schematic_liu.jpg>] [10]
+<images/chapter_3/wave_1.png, id=531, 586.8324pt x 442.2924pt>
 File: images/chapter_3/wave_1.png Graphic file (type png)
 
 <use images/chapter_3/wave_1.png>
-<images/chapter_3/wave_2.png, id=450, 586.8324pt x 442.2924pt>
+<images/chapter_3/wave_2.png, id=532, 586.8324pt x 442.2924pt>
 File: images/chapter_3/wave_2.png Graphic file (type png)
 
-<use images/chapter_3/wave_2.png> [10] [11 <./images/chapter_3/wave_1.png> <./i
-mages/chapter_3/wave_2.png>]
-<images/chapter_3/simulation_picture_long.png, id=468, 586.8324pt x 442.2924pt>
+<use images/chapter_3/wave_2.png> [11]
+<images/chapter_3/simulation_picture_long.png, id=544, 586.8324pt x 442.2924pt>
 File: images/chapter_3/simulation_picture_long.png Graphic file (type png)
-<use images/chapter_3/simulation_picture_long.png>
-<images/chapter_3/simulation_picture_transverse.png, id=469, 586.8324pt x 442.2
+<use images/chapter_3/simulation_picture_long.png> [12 <./images/chapter_3/wave
+_1.png>]
+<images/chapter_3/simulation_picture_transverse.png, id=550, 586.8324pt x 442.2
 924pt>
 File: images/chapter_3/simulation_picture_transverse.png Graphic file (type png
 )
  <use images/chapter_3/simulation_picture_transverse.png>
-<images/chapter_3/wave_trans.png, id=470, 586.8324pt x 442.2924pt>
+<images/chapter_3/wave_trans.png, id=551, 586.8324pt x 442.2924pt>
 File: images/chapter_3/wave_trans.png Graphic file (type png)
 
-<use images/chapter_3/wave_trans.png> [12 <./images/chapter_3/simulation_pictur
-e_long.png>] [13 <./images/chapter_3/simulation_picture_transverse.png> <./imag
-es/chapter_3/wave_trans.png>]
-<images/chapter_3/final_longitudinal.png, id=483, 586.8324pt x 442.2924pt>
+<use images/chapter_3/wave_trans.png> [13 <./images/chapter_3/wave_2.png> <./im
+ages/chapter_3/simulation_picture_long.png>] [14 <./images/chapter_3/simulation
+_picture_transverse.png> <./images/chapter_3/wave_trans.png>]
+<images/chapter_3/final_longitudinal.png, id=565, 586.8324pt x 442.2924pt>
 File: images/chapter_3/final_longitudinal.png Graphic file (type png)
 
 <use images/chapter_3/final_longitudinal.png>
-<images/chapter_3/final_transverse.png, id=484, 586.8324pt x 442.2924pt>
+<images/chapter_3/final_transverse.png, id=566, 586.8324pt x 442.2924pt>
 File: images/chapter_3/final_transverse.png Graphic file (type png)
 
 <use images/chapter_3/final_transverse.png>
-<images/chapter_3/final_transervse_zoom.png, id=485, 586.8324pt x 442.2924pt>
+<images/chapter_3/final_transervse_zoom.png, id=567, 586.8324pt x 442.2924pt>
 File: images/chapter_3/final_transervse_zoom.png Graphic file (type png)
 
 <use images/chapter_3/final_transervse_zoom.png>
-<images/chapter_3/finaLfft_zzom.jpg, id=486, 563.10374pt x 421.575pt>
+<images/chapter_3/finaLfft_zzom.jpg, id=568, 563.10374pt x 421.575pt>
 File: images/chapter_3/finaLfft_zzom.jpg Graphic file (type jpg)
 
 <use images/chapter_3/finaLfft_zzom.jpg>
-<images/chapter_3/validation.png, id=487, 794.97pt x 331.2375pt>
+<images/chapter_3/validation.png, id=569, 794.97pt x 331.2375pt>
 File: images/chapter_3/validation.png Graphic file (type png)
 
 <use images/chapter_3/validation.png>
-<images/chapter_3/validation_2.png, id=490, 782.925pt x 301.125pt>
+<images/chapter_3/validation_2.png, id=572, 782.925pt x 301.125pt>
 File: images/chapter_3/validation_2.png Graphic file (type png)
 
-<use images/chapter_3/validation_2.png>) [14 <./images/chapter_3/final_longitud
-inal.png>] [15 <./images/chapter_3/final_transverse.png> <./images/chapter_3/fi
-nal_transervse_zoom.png>] [16 <./images/chapter_3/finaLfft_zzom.jpg> <./images/
+<use images/chapter_3/validation_2.png>) [15 <./images/chapter_3/final_longitud
+inal.png>] [16 <./images/chapter_3/final_transverse.png> <./images/chapter_3/fi
+nal_transervse_zoom.png>] [17 <./images/chapter_3/finaLfft_zzom.jpg> <./images/
 chapter_3/validation.png (PNG copy)> <./images/chapter_3/validation_2.png (PNG 
 copy)>]
 CHAPTER 4.
-(./sensitivity.tex [17
+(./sensitivity.tex [18
 
-] [18] [19]
-<images/chapter_4/finaLfft_nozzom.jpg, id=525, 563.10374pt x 421.575pt>
+] [19] [20]
+<images/chapter_4/finaLfft_nozzom.jpg, id=607, 563.10374pt x 421.575pt>
 File: images/chapter_4/finaLfft_nozzom.jpg Graphic file (type jpg)
 
 <use images/chapter_4/finaLfft_nozzom.jpg>
-<images/chapter_4/lvsamp.png, id=526, 503.8825pt x 257.96375pt>
+<images/chapter_4/lvsamp.png, id=608, 503.8825pt x 257.96375pt>
 File: images/chapter_4/lvsamp.png Graphic file (type png)
 
 <use images/chapter_4/lvsamp.png>
-<images/chapter_4/mvsamp.png, id=527, 477.785pt x 283.0575pt>
+<images/chapter_4/mvsamp.png, id=609, 477.785pt x 283.0575pt>
 File: images/chapter_4/mvsamp.png Graphic file (type png)
 
-<use images/chapter_4/mvsamp.png> [20 <./images/chapter_4/finaLfft_nozzom.jpg>]
-[21 <./images/chapter_4/lvsamp.png> <./images/chapter_4/mvsamp.png>]) [22]
+<use images/chapter_4/mvsamp.png> [21 <./images/chapter_4/finaLfft_nozzom.jpg>]
+[22 <./images/chapter_4/lvsamp.png> <./images/chapter_4/mvsamp.png>]) [23]
 CHAPTER 5.
-(./inverse.tex [23
+(./inverse.tex
+<images/chapter_5/forward/linear.jpg, id=625, 1607.00375pt x 792.9625pt>
+File: images/chapter_5/forward/linear.jpg Graphic file (type jpg)
 
-] [24]
+<use images/chapter_5/forward/linear.jpg>
+<images/chapter_5/forward/linear_nonoise.jpg, id=626, 1607.00375pt x 792.9625pt
+>
+File: images/chapter_5/forward/linear_nonoise.jpg Graphic file (type jpg)
+ <use images/chapter_5/forward/linear_nonoise.jpg>
+<images/chapter_5/forward/regression.png, id=627, 599.99156pt x 346.29375pt>
+File: images/chapter_5/forward/regression.png Graphic file (type png)
+
+<use images/chapter_5/forward/regression.png> [24
+
+] [25 <./images/chapter_5/forward/linear.jpg> <./images/chapter_5/forward/linea
+r_nonoise.jpg>]
+<images/chapter_5/forward/forward_snr_2.png, id=638, 819.8128pt x 347.04657pt>
+File: images/chapter_5/forward/forward_snr_2.png Graphic file (type png)
+
+<use images/chapter_5/forward/forward_snr_2.png>
+<images/chapter_5/forward/error_snr_2.png, id=639, 819.8128pt x 347.04657pt>
+File: images/chapter_5/forward/error_snr_2.png Graphic file (type png)
+
+<use images/chapter_5/forward/error_snr_2.png>
+<images/chapter_5/forward/forward_snr_8.png, id=640, 913.16156pt x 368.87813pt>
+File: images/chapter_5/forward/forward_snr_8.png Graphic file (type png)
+<use images/chapter_5/forward/forward_snr_8.png>
+Overfull \hbox (3.61177pt too wide) in paragraph at lines 62--63
+ [] 
+ []
+
+<images/chapter_5/forward/error_snr_8.png, id=641, 913.16156pt x 368.87813pt>
+File: images/chapter_5/forward/error_snr_8.png Graphic file (type png)
+
+<use images/chapter_5/forward/error_snr_8.png>
+Overfull \hbox (3.61177pt too wide) in paragraph at lines 70--71
+ [] 
+ []
+
+
+<images/chapter_5/forward/forward_snr_12.png, id=642, 869.49844pt x 377.91188pt
+>
+File: images/chapter_5/forward/forward_snr_12.png Graphic file (type png)
+ <use images/chapter_5/forward/forward_snr_12.png>
+<images/chapter_5/forward/error_snr_12.png, id=643, 869.49844pt x 377.91188pt>
+File: images/chapter_5/forward/error_snr_12.png Graphic file (type png)
+
+<use images/chapter_5/forward/error_snr_12.png> [26 <./images/chapter_5/forward
+/regression.png (PNG copy)> <./images/chapter_5/forward/forward_snr_2.png>]
+[27 <./images/chapter_5/forward/error_snr_2.png> <./images/chapter_5/forward/fo
+rward_snr_8.png> <./images/chapter_5/forward/error_snr_8.png>] [28 <./images/ch
+apter_5/forward/forward_snr_12.png> <./images/chapter_5/forward/error_snr_12.pn
+g>] [29]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [25]) [26]
-CHAPTER 6.
-(./final.tex) [27
+ [30]
+<images/chapter_5/inverse/pred_snr_2.png, id=688, 983.92593pt x 399.74344pt>
+File: images/chapter_5/inverse/pred_snr_2.png Graphic file (type png)
 
-]
+<use images/chapter_5/inverse/pred_snr_2.png>
+Overfull \hbox (38.99387pt too wide) in paragraph at lines 163--164
+ [] 
+ []
+
+
+<images/chapter_5/inverse/error_snr_2.png, id=689, 1032.85875pt x 399.74344pt>
+File: images/chapter_5/inverse/error_snr_2.png Graphic file (type png)
+
+<use images/chapter_5/inverse/error_snr_2.png>
+Overfull \hbox (63.46022pt too wide) in paragraph at lines 171--172
+ [] 
+ []
+
+<images/chapter_5/inverse/pred_snr_8.png, id=690, 750.55406pt x 353.06906pt>
+File: images/chapter_5/inverse/pred_snr_8.png Graphic file (type png)
+
+<use images/chapter_5/inverse/pred_snr_8.png>
+<images/chapter_5/inverse/error_snr_8.png, id=691, 750.55406pt x 353.06906pt>
+File: images/chapter_5/inverse/error_snr_8.png Graphic file (type png)
+
+<use images/chapter_5/inverse/error_snr_8.png>
+<images/chapter_5/inverse/pred_snr_12.png, id=692, 857.45343pt x 361.35pt>
+File: images/chapter_5/inverse/pred_snr_12.png Graphic file (type png)
+
+<use images/chapter_5/inverse/pred_snr_12.png>
+<images/chapter_5/inverse/error_snr_12.png, id=693, 857.45343pt x 361.35pt>
+File: images/chapter_5/inverse/error_snr_12.png Graphic file (type png)
+
+<use images/chapter_5/inverse/error_snr_12.png>) [31 <./images/chapter_5/invers
+e/pred_snr_2.png>] [32 <./images/chapter_5/inverse/error_snr_2.png> <./images/c
+hapter_5/inverse/pred_snr_8.png>] [33 <./images/chapter_5/inverse/error_snr_8.p
+ng> <./images/chapter_5/inverse/pred_snr_12.png> <./images/chapter_5/inverse/er
+ror_snr_12.png>] [34]
+CHAPTER 6.
+(./final.tex [35
+
+]) [36]
 APPENDIX A.
 (./appendix.tex) (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
@@ -749,13 +887,13 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 7.
- [28
+ [37
 
 ]
-[29]
+[38]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
- [30] [31] [32]
+ [39] [40] [41]
 LaTeX Font Info:    Try loading font information for OML+ptm on input line 135.
 
  (/usr/share/texmf-texlive/tex/latex/psnfss/omlptm.fd
@@ -764,7 +902,7 @@ File: omlptm.fd
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 135.
 
-[33] [34] [35]) [36] (../formulation.py
+[42] [43] [44]) [45] (../formulation.py
 Overfull \hbox (32.5325pt too wide) in paragraph at lines 12--13
 [][][] 
  []
@@ -774,15 +912,11 @@ Overfull \hbox (39.10255pt too wide) in paragraph at lines 14--16
 [][][] 
  []
 
-[37] [38] [39] [40] [41]) [42] (../data.py [43] [44] [45]) (../constants.py)
-[46] (../framework.py [47]) [48] (../sensitivity_analysis.py [49]) [50]
-(../GMM_regression.py [51]) [52] (../defaults.py) [53]
+[46] [47] [48] [49] [50]) [51] (../data.py [52] [53] [54]) (../constants.py)
+[55] (../framework.py [56]) [57] (../sensitivity_analysis.py [58]) [59]
+(../GMM_regression.py [60]) [61] (../defaults.py) [62]
 APPENDIX B.
-[54
-
-]
-APPENDIX C.
-[55
+[63
 
 ] (./bibliography.bib
 Missing character: There is no â in font ptmr7t!
@@ -794,30 +928,33 @@ Missing character: There is no ™ in font ptmri7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
-) [56
+Missing character: There is no Â in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+ [64
 
-] (./thesis.aux) ) 
+]) [65] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 11356 strings out of 494647
- 159411 string characters out of 1173989
- 468857 words of memory out of 3000000
- 13488 multiletter control sequences out of 15000+50000
+ 11519 strings out of 494647
+ 163848 string characters out of 1173989
+ 470177 words of memory out of 3000000
+ 13591 multiletter control sequences out of 15000+50000
  23955 words of font info for 59 fonts, out of 3000000 for 9000
  297 hyphenation exceptions out of 8191
  43i,10n,46p,1173b,1732s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
-/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texli
-ve/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/t
-imes/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (65 pages, 853070 bytes).
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}<
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/
+texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf
+-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1
+/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.p
+fb>
+Output written on thesis.pdf (75 pages, 1314820 bytes).
 PDF statistics:
- 1512 PDF objects out of 1728 (max. 8388607)
- 803 named destinations out of 1000 (max. 500000)
- 536 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1675 PDF objects out of 1728 (max. 8388607)
+ 847 named destinations out of 1000 (max. 500000)
+ 661 words of extra memory for PDF output out of 10000 (max. 10000000)
 

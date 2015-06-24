@@ -15,8 +15,78 @@ For a non-square matrix X
 A = (XX^T)^{-1}X^Tb
 \end{equation}
 
-The linear regression of the forward model 
+The linear regression of the forward model with and without noise is shown below
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.25]{images/chapter_5/forward/linear.jpg}
+\caption{Linear Regression of Data with Noise}
+\end{center}
+\end{figure}
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.25]{images/chapter_5/forward/linear_nonoise.jpg}
+\caption{Linear Regression of Data without Noise}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{images/chapter_5/forward/regression.png}
+\caption{Residual Plot of Data without Noise}
+\end{center}
+\end{figure}
+
+While the linear model seemed a good fit in the scenario, for a more complex case, the linear model will fail. To include the effects of the variable l, we decided to pursue a more generic approach, which is the gaussian process. This model is streamlined to negate errors as well.
 \subsection{The Gaussian Process}
+
+The gaussian process will be investigated in detail in the inversion section. A regression model using this statistical technique for the forward model proved to be quite successful and this resulted in us deciding to use the same technique for the inverse model. A support vector regression was attempted, but this method proved not be suited for this kind of a problem. Given below are the plots for the predicted values and the actual values of amplitude and normalized error.
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{images/chapter_5/forward/forward_snr_2.png}
+\caption{SNR 2}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{images/chapter_5/forward/error_snr_2.png}
+\caption{Normalized Error at SNR 2}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{images/chapter_5/forward/forward_snr_8.png}
+\caption{SNR 8}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{images/chapter_5/forward/error_snr_8.png}
+\caption{Normalized Error at SNR 8}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{images/chapter_5/forward/forward_snr_12.png}
+\caption{SNR 12}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{images/chapter_5/forward/error_snr_12.png}
+\caption{Normalized Error at SNR 12}
+\end{center}
+\end{figure}
+
 \section{Statistical Techniques}
 \subsection{Noisy data}
 The data we have worked with till now has been data without any noise added to it. To validate the model, it is necessary to have a dataset that is contaminated with a few errors in sampling. Thus, to emulate an actual transducer's signal, we add noise to the data at Various SNRs. The results at various SNRs are compared to test the accuracy of the inverse model. Since we measure the amplitude of the resultant wave, the noise is added to the peak-to-peak amplitude value of the wave. 
@@ -85,3 +155,55 @@ p(y_T | y) = N(\mu_T, \Sigma_T)
 
 The solutions to this formulation are beyond the scope of this dissertation and the reader is requested to consult the references mentioned above. This problem now becomes an optimization problem to minimize log likelihood. This gives us our solution.
 \section{Discussion and Results}
+
+From the results and the limited plots shown in the figures below, it is evident that the Gaussian Process acts as a very good statistical estimator for this case. The inversion of model parameters is quite successful and thus even for complex use cases will do a good job. Due to the nature of the techniques employed, the solutions obtained are close to the global optima, and thus quite accurate.
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{images/chapter_5/inverse/pred_snr_2.png}
+\caption{Prediction of Value of M at SNR 2}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{images/chapter_5/inverse/error_snr_2.png}
+\caption{normalized Error of M at SNR 12}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{images/chapter_5/inverse/pred_snr_8.png}
+\caption{Prediction of Value of M at SNR 8}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{images/chapter_5/inverse/error_snr_8.png}
+\caption{normalized Error of M at SNR 8}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{images/chapter_5/inverse/pred_snr_12.png}
+\caption{Prediction of Value of M at SNR 2}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{images/chapter_5/inverse/error_snr_12.png}
+\caption{normalized Error of M at SNR 12}
+\end{center}
+\end{figure}
+
+\subsection{Caveats}
+There are quite a few caveats to the inversion model produced here. Firstly, the case we have chosen to model happens to be a very specific case of a very difficult to solve generic problem. In this case, the model parameters luckily end up being independent of each other, which makes our task much easier. For a more complicated use case, the model parameters might be correlated which will result in difficulties. The inversion technique we have used has proven to be quite efficient.

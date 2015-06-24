@@ -203,7 +203,7 @@ footskip=30pt,bottom=1in]{geometry}
 {\large \em
 \begin{center} 
 under the guidance of \\
-{\bf Dr. Jayalal Sarma M.N.}
+{\bf Dr. Krishnan Balasubramanian and Dr. L Vijayaraghavan}
 \end{center}
 
 }

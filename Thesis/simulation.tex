@@ -84,6 +84,7 @@ In the FDTD for sound waves, the main stability criteria is the \textbf{Courant}
 \Delta x = \Delta y,
 \Delta t \leq \frac{1}{C} \frac{1}{\sqrt{2}}
 \end{equation}
+Where $C$ is the velocity of the wave and $\Delta x$ is the spatial discretizarion in metre and $\Delta t$ is the temporal discretization.
 \subsubsection{Boundary Conditions}
 The simulation needs a few boundary conditions to be set up, such that there is a solution to the equation that is solved. In this case, we assume the propagation of the wave as equal to the propagation of a wave through any standard wave guide. Since, we are assuming a metal-to-air interface, we have modeled this as a completely reflecting wave guide with no absorption. For other interfaces or absorption in the wave-guide, we could look at a Perfectly Matched Layers (PML) at the boundaries for complete absorption.
 
@@ -102,7 +103,7 @@ Another important component of the boundary layer is basically the initial condi
 
 For this FDTD simulation, we need to excite the system with one transverse and one longitudinal wave on either end. As the system we have currently taken is collinear, the only criteria is the excitation, and nothing else. The initial wave forms must also be smooth\cite{smoothness} to prevent numerical dispersion and dissipation errors in the simulations \cite{errors} \cite{errors_2}
 
-\textbf{Mesh and Sampling Sampling}
+\subsection{Mesh and Sampling Sampling}
 To further get a more accurate solution, we have to choose a suitable size of mesh for which the solution is acceptable and at the same time not too time consuming. The solution must be approximately right, without too much noise in the data. The solution is also sampled at a rate which is extremely high to prevent aliasing of the data. We sample at a rate that is proportional to the meshing, a criteria we get from the courant condition.
 
 \section{Simulation}
@@ -133,10 +134,10 @@ Sampling Frequency & $3.2 \times 10^{8}$Hz \\ \hline
 \hline
 \textbf{Property} & \textbf{Longitudinal} & \textbf{Transverse} \\ \hline
 Number of pulses & 10 & 10 \\ \hline
-Pulse Frequency & 10MHz & 2.5MHz \\ \hline
-Pulse Amplitude & $2 \times 10^{-8}$m & $2 \times 10^{-8}$m \\ \hline
-Pulse Duration & $10^{-6}$s & $4 \times 10^{-6}$s \\ \hline
-Pulse Velocity & $6299.5ms^{-1}$ & $3100ms^{-1}$\\ \hline 
+Pulse Frequency(MHz) & 10MHz & 2.5MHz \\ \hline
+Pulse Amplitude (m) & $2 \times 10^{-8}$m & $2 \times 10^{-8}$m \\ \hline
+Pulse Duration (s) & $10^{-6}$s & $4 \times 10^{-6}$s \\ \hline
+Pulse Velocity $ms^{-1}$ & $6299.5ms^{-1}$ & $3100ms^{-1}$\\ \hline 
 \end{tabular}
 \end{table}
 \section{Simulation Results}
